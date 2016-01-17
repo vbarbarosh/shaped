@@ -1,3 +1,13 @@
+# shaped
+
+shaped - a SVG editor based on 
+
+## Configuration
+
+$ bin/configure
+
+## Obslete (to some degree)
+
 Method Draw is a fork of SVG Edit, a web based SVG editor.
 
 The purpose of Method Draw is to improve the usability and user experience of SVG Edit. It removes some features such as  
