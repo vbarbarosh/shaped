@@ -1,10 +1,10 @@
 # shaped
 
-shaped - a SVG editor based on 
+An SVG Editor based on https://github.com/duopixel/Method-Draw
 
 ## Configuration
 
-$ bin/configure
+    $ bin/configure
 
 ## Obslete (to some degree)
 
