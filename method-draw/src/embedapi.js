@@ -109,7 +109,8 @@ function embedded_svg_edit(frame){
   //TODO: use AddEvent for Trident browsers, currently they dont support SVG, but they do support onmessage
   var t = this;
   window.addEventListener("message", function(e){
-    if(e.data.substr(0,4)=="SVGe"){ //because svg-edit is too longish
+    // embedapi.js:113 Uncaught TypeError: e.data.substr is not a function
+    if (typeof e.data == 'string' && e.data.substr(0,4)=="SVGe"){ //because svg-edit is too longish
       var data = e.data.substr(4);
       var cbid = data.substr(0, data.indexOf(";"));
       if(t.callbacks[cbid]){
