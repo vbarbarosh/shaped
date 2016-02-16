@@ -66,6 +66,7 @@ $(PACKAGE): $(COMPILED_JS) $(COMPILED_CSS)
 	# Remove all hidden .svn directories
 	-find $(PACKAGE) -name .svn -type d | xargs rm -rf {} \;
 	-find $(PACKAGE) -name .git -type d | xargs rm -rf {} \;
+	-find $(PACKAGE) -name __test\* -delete
 
 	# Create the release version of the main HTML file.
 	build/tools/ship.py --i=editor/index.html --on=svg_edit_release > $(PACKAGE)/index.html
