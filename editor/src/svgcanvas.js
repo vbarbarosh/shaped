@@ -135,6 +135,7 @@ var canvas = this;
 var svgdoc = container.ownerDocument;
 
 // This is a container for the document being edited, not the document itself.
+// The following commented code was not present in method-draw/src/svgcanvas.js
 //var svgroot = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 //svgroot.setAttribute("width", dimensions[0]);
 //svgroot.setAttribute("height", dimensions[1]);
