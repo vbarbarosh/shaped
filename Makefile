@@ -1,9 +1,10 @@
-NAME=method-draw
-VERSION=2.6
-PACKAGE=$(NAME)
+# NAME=method-draw
+# PACKAGE=$(NAME)
+VERSION=$(shell git describe --tags --long | head -n1 | sed -r 's/^v([0-9]+)\.([0-9]+)-([0-9]+).*/\1.\2.\3/')
 MAKEDOCS=naturaldocs/NaturalDocs
-CLOSURE=build/tools/closure-compiler.jar
-YUICOMPRESSOR=build/tools/yuicompressor-2.4.7.jar
+SHIP=bin/vendor/ship.py
+CLOSURE=bin/vendor/closure-compiler.jar
+YUICOMPRESSOR=bin/vendor/yuicompressor-2.4.7.jar
 
 # All files that will be compiled by the Closure compiler.
 
@@ -43,56 +44,54 @@ CSS_FILES=\
 	lib/jgraduate/css/jgraduate.css \
 	css/method-draw.css \
 
-JS_INPUT_FILES=$(addprefix editor/, $(JS_FILES))
-CSS_INPUT_FILES=$(addprefix editor/, $(CSS_FILES))
-JS_BUILD_FILES=$(addprefix $(PACKAGE)/, $(JS_FILES))
-CSS_BUILD_FILES=$(addprefix $(PACKAGE)/, $(CSS_FILES))
+JS_INPUT_FILES=$(addprefix src/, $(JS_FILES))
+CSS_INPUT_FILES=$(addprefix src/, $(CSS_FILES))
+JS_BUILD_FILES=$(addprefix build/, $(JS_FILES))
+CSS_BUILD_FILES=$(addprefix build/, $(CSS_FILES))
 CLOSURE_JS_ARGS=$(addprefix --js , $(JS_INPUT_FILES))
-COMPILED_JS=editor/method-draw.compiled.js
-COMPILED_CSS=editor/css/method-draw.compiled.css
+COMPILED_JS=build/method-draw.compiled.js
+COMPILED_CSS=build/css/method-draw.compiled.css
 
 all: release
 
+release: build $(COMPILED_JS) $(COMPILED_CSS)
+
+compile: $(COMPILED_JS) $(COMPILED_CSS)
+
 # The build directory relies on the JS being compiled.
-$(PACKAGE): $(COMPILED_JS) $(COMPILED_CSS)
-	rm -rf config;
-	mkdir config;
-	if [ -x $(MAKEDOCS) ] ; then $(MAKEDOCS) -i editor/ -o html docs/ -p config/ -oft -r ; fi
+build:
+	if test -x $(MAKEDOCS) ; then rm -rf config; mkdir config; $(MAKEDOCS) -i src/ -o html docs/ -p config/ -oft -r ; fi
 
 	# Make build directory and copy all editor contents into it
-	mkdir -p $(PACKAGE)
-	cp -r editor/* $(PACKAGE)
+	mkdir -p build
+	cp -r src/* build/
 
 	# Remove all hidden .svn directories
-	-find $(PACKAGE) -name .svn -type d | xargs rm -rf {} \;
-	-find $(PACKAGE) -name .git -type d | xargs rm -rf {} \;
-	-find $(PACKAGE) -name __test\* -delete
+	-find build/ -name .svn -type d | xargs rm -rf {} \;
+	-find build/ -name .git -type d | xargs rm -rf {} \;
+	-find build -name __test\* -delete
 
 	# Create the release version of the main HTML file.
-	build/tools/ship.py --i=editor/index.html --on=svg_edit_release > $(PACKAGE)/index.html
+	$(SHIP) --i=src/index.html --on=svg_edit_release > build/index.html
 
 # NOTE: Some files are not ready for the Closure compiler: (jquery)
 # NOTE: Our code safely compiles under SIMPLE_OPTIMIZATIONS
 # NOTE: Our code is *not* ready for ADVANCED_OPTIMIZATIONS
 # NOTE: WHITESPACE_ONLY and --formatting PRETTY_PRINT is helpful for debugging.
 
-$(COMPILED_CSS):
-	cat $(CSS_INPUT_FILES) > editor/temp.css;
-	java -jar $(YUICOMPRESSOR) editor/temp.css -o $(COMPILED_CSS) --line-break 0;
-	rm editor/temp.css;
+$(COMPILED_CSS): build
+	cat $(CSS_INPUT_FILES) > temp.css
+	java -jar $(YUICOMPRESSOR) temp.css -o $(COMPILED_CSS) --line-break 0
+	rm temp.css
 
-$(COMPILED_JS):
+$(COMPILED_JS): build
 	java -jar $(CLOSURE) \
 		--compilation_level SIMPLE_OPTIMIZATIONS \
 		$(CLOSURE_JS_ARGS) \
 		--js_output_file $(COMPILED_JS)
 
-compile: $(COMPILED_JS) $(COMPILED_CSS)
-
-release: $(PACKAGE)
-
 clean:
 	rm -rf config
-	rm -rf $(PACKAGE)
+	rm -rf build
 	rm -rf $(COMPILED_JS)
 	rm -rf $(COMPILED_CSS)

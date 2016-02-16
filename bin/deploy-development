@@ -17,12 +17,12 @@ fi
 
 d=`cd $scriptdir; git rev-parse --show-toplevel`
 
-dir=build-shaped
+dir=build
 branch=latest-development
 current_branch=`cd $scriptdir; git rev-parse --abbrev-ref HEAD`
 
 cd $d
-bin/build-shaped
+bin/build
 
 cp -r $dir __tmp_dir
 git branch -D __tmp || true

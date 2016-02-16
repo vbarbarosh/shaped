@@ -12,5 +12,5 @@ scriptname=`basename $script`
 
 d=`cd $scriptdir; git rev-parse --show-toplevel`
 
-rm -rf $d/build-shaped
-cp -r $d/method-draw $d/build-shaped
+cd $d
+make clean release
