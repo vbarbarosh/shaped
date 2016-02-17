@@ -5300,12 +5300,15 @@ var removeUnusedDefElems = this.removeUnusedDefElems = function() {
   return numRemoved;
 }
 
-// Function: svgCanvasToString
-// Main function to set up the SVG content for output 
+// Function: svgCanvasToString({optional removeBackground: false})
+// Main function to set up the SVG content for output
 //
 // Returns: 
 // String containing the SVG image for output
-this.svgCanvasToString = function() {
+this.svgCanvasToString = function (param) {
+
+  var removeBackground = (param && param['removeBackground']);
+
   // keep calling it until there are none to remove
   while (removeUnusedDefElems() > 0) {};
   
@@ -5323,10 +5326,10 @@ this.svgCanvasToString = function() {
     leaveContext();
     selectOnly([current_group]);
   }
-  
+
   //hide grid, otherwise shows a black canvas
   $('#canvasGrid').attr('display', 'none');
-  
+
   var naked_svgs = [];
   
   // Unwrap gsvg if it has no special attributes (only id and style)
@@ -5345,8 +5348,20 @@ this.svgCanvasToString = function() {
       $(this).replaceWith(svg);
     }
   });
-  var output = this.svgToString(svgcontent, 0);
-  
+
+  var output;
+
+  if (removeBackground) {
+    var background = $('#canvas_background'),
+        backgroundPrev = background.prev();
+    background.remove();
+    output = this.svgToString(svgcontent, 0);
+    backgroundPrev.after(background);
+  }
+  else {
+    output = this.svgToString(svgcontent, 0);
+  }
+
   // Rewrap gsvg
   if(naked_svgs.length) {
     $(naked_svgs).each(function() {
@@ -5628,14 +5643,14 @@ this.rasterExport = function() {
   call("exported", {svg: str, issues: issues});
 };
 
-// Function: getSvgString
+// Function: getSvgString({optional removeBackground: false})
 // Returns the current drawing as raw SVG XML text.
 //
 // Returns:
 // The current drawing as raw SVG XML text.
-this.getSvgString = function() {
+this.getSvgString = function(param) {
   save_options.apply = false;
-  return this.svgCanvasToString();
+  return this.svgCanvasToString(param);
 };
 
 // Function: randomizeIds

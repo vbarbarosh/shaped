@@ -69,7 +69,7 @@
             },
             insert: function () {
                 var _this = this;
-                svgCanvas.getSvgString()(function (data, error) {
+                svgCanvas.getSvgString({removeBackground: true})(function (data, error) {
                     if (error) {
                         alert('error: ' + error);
                     }
