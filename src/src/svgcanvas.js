@@ -135,13 +135,12 @@ var canvas = this;
 var svgdoc = container.ownerDocument;
 
 // This is a container for the document being edited, not the document itself.
-// The following commented code was not present in method-draw/src/svgcanvas.js
-//var svgroot = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-//svgroot.setAttribute("width", dimensions[0]);
-//svgroot.setAttribute("height", dimensions[1]);
-//svgroot.id = "svgroot";
-//svgroot.setAttribute("xlinkns", xlinkns);
-// The following code was taken from method-draw/src/svgcanvas.js
+var svgroot = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+svgroot.setAttribute("width", dimensions[0]);
+svgroot.setAttribute("height", dimensions[1]);
+svgroot.id = "svgroot";
+svgroot.setAttribute("xlinkns", xlinkns);
+/* The following code was present in method-draw/src/svgcanvas.js
 var svgroot = svgdoc.importNode(svgedit.utilities.text2xml(
     '<svg id="svgroot" xmlns="' + svgns + '" xlinkns="' + xlinkns + '" ' +
       'width="' + dimensions[0] + '" height="' + dimensions[1] + '" x="' + dimensions[0] + '" y="' + dimensions[1] + '" overflow="visible">' +
@@ -156,6 +155,7 @@ var svgroot = svgdoc.importNode(svgedit.utilities.text2xml(
         '</filter>'+
       '</defs>'+
     '</svg>').documentElement, true);
+*/
 container.appendChild(svgroot);
 
 // The actual element that represents the final output SVG element

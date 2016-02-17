@@ -2306,13 +2306,11 @@
         $.confirm(uiStrings.notification.QwantToClear, function(ok) {
           if(!ok) return;
           setSelectMode();
-          // was not present in method-draw/
-          //svgCanvas.deleteSelectedElements();
+          svgCanvas.deleteSelectedElements();
           svgCanvas.clear();
           svgCanvas.setResolution(dims[0], dims[1]);
           updateCanvas(true);
-          // was not present in method-draw/
-          //createBackground();
+          createBackground();
           zoomImage();
           updateContextPanel();
           prepPaints();
