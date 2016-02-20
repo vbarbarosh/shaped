@@ -114,10 +114,11 @@ function embedded_svg_edit(frame){
       var data = e.data.substr(4);
       var cbid = data.substr(0, data.indexOf(";"));
       if(t.callbacks[cbid]){
-        if(data.substr(0,6) != "error:"){
-          t.callbacks[cbid](eval("("+data.substr(cbid.length+1)+")"))
-        }else{
+        if(data.substr(cbid.length,'error:'.length) == "error:"){
           t.callbacks[cbid](data, "error");
+        }
+        else {
+          t.callbacks[cbid](eval("("+data.substr(cbid.length+1)+")"))
         }
       }
     }
