@@ -2218,9 +2218,18 @@ var addToSelection = this.addToSelection = function(elemsToAdd, showGrips) {
       }
     }
   }
+
   call("selected", selectedElements);
-  if (showGrips || selectedElements.length == 1) selectorManager.requestSelector(selectedElements[0]).showGrips(true)
-  else selectorManager.requestSelector(selectedElements[0]).showGrips(false);
+
+  // FIX Uncaught TypeError: Cannot read property 'showGrips' of null
+  if (selectedElements[0] !== null) {
+    if (showGrips || selectedElements.length == 1) {
+      selectorManager.requestSelector(selectedElements[0]).showGrips(true);
+    }
+    else {
+      selectorManager.requestSelector(selectedElements[0]).showGrips(false);
+    }
+  }
 
   // make sure the elements are in the correct order
   // See: http://www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-compareDocumentPosition
@@ -2232,9 +2241,12 @@ var addToSelection = this.addToSelection = function(elemsToAdd, showGrips) {
       return 1;
     }
   });
-  
+
   // Make sure first elements are not null
-  while(selectedElements[0] == null) selectedElements.shift(0);
+  // FIX Uncaught TypeError: Cannot read property 'showGrips' of null
+  while (selectedElements[0] === null) {
+    selectedElements.shift();
+  }
 };
 
 // Function: selectOnly()
