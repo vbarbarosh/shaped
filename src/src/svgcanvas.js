@@ -2222,7 +2222,7 @@ var addToSelection = this.addToSelection = function(elemsToAdd, showGrips) {
   call("selected", selectedElements);
 
   // FIX Uncaught TypeError: Cannot read property 'showGrips' of null
-  if (selectedElements[0] !== null) {
+  if (selectedElements.length > 0 && selectedElements[0] !== null) {
     if (showGrips || selectedElements.length == 1) {
       selectorManager.requestSelector(selectedElements[0]).showGrips(true);
     }
