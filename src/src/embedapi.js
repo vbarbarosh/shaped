@@ -112,9 +112,10 @@ function embedded_svg_edit(frame){
     // embedapi.js:113 Uncaught TypeError: e.data.substr is not a function
     if (typeof e.data == 'string' && e.data.substr(0,4)=="SVGe"){ //because svg-edit is too longish
       var data = e.data.substr(4);
-      var cbid = data.substr(0, data.indexOf(";"));
+      var semicolon = data.indexOf(';');
+      var cbid = data.substr(0, semicolon);
       if(t.callbacks[cbid]){
-        if(data.substr(cbid.length,'error:'.length) == "error:"){
+        if(data.substr(semicolon + 1,'error:'.length) == "error:"){
           t.callbacks[cbid](data, "error");
         }
         else {
