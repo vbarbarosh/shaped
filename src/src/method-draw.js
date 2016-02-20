@@ -3958,6 +3958,14 @@
         }
       }
         window.addEventListener("message", function(e){
+          // RealtimeBoard Extension
+          // https://chrome.google.com/webstore/detail/realtimeboard-extension/ecfnenchgjbicgaooadfdmcojkcmjblk?utm_source=chrome-app-launcher-info-dialog
+          // This extension after loading sends the following message:
+          // Object {type: "EXTENSION", installed: true}
+          if (typeof e.data.indexOf != 'function') {
+            // console.warn('e.data.indexOf is not a function');
+            return;
+          }
         var cbid = parseInt(e.data.substr(0, e.data.indexOf(";")));
         try{
           e.source.postMessage("SVGe"+cbid+";"+json_encode(eval(e.data)), "*");
