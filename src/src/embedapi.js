@@ -116,7 +116,7 @@ function embedded_svg_edit(frame){
       var cbid = data.substr(0, semicolon);
       if(t.callbacks[cbid]){
         if(data.substr(semicolon + 1,'error:'.length) == "error:"){
-          t.callbacks[cbid](data, "error");
+          t.callbacks[cbid](data, data.substr(semicolon + 1 + 'error:'.length));
         }
         else {
           t.callbacks[cbid](eval("("+data.substr(cbid.length+1)+")"))
