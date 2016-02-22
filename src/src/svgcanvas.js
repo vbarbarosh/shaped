@@ -8953,9 +8953,10 @@ this.updateCanvas = function(w, h) {
       'height': '100%'
     });
   }
-  
+
+  // FIXME take into account *current_group* transformation
   selectorManager.selectorParentGroup.setAttribute("transform","translate(" + x + "," + y + ")");
-  
+
   return {x:x, y:y, old_x:old_x, old_y:old_y, d_x:x - old_x, d_y:y - old_y};
 }
 
