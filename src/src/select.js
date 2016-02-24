@@ -152,6 +152,8 @@ svgedit.select.Selector.prototype.resize = function() {
     offset += 2/current_zoom;
   }
 
+  // FIXME take into account *current_group* transformation
+
   // loop and transform our bounding box until we reach our first rotation
   var tlist = svgedit.transformlist.getTransformList(selected);
   var m = svgedit.math.transformListToTransform(tlist).matrix;
