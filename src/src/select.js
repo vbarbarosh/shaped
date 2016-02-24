@@ -152,11 +152,13 @@ svgedit.select.Selector.prototype.resize = function() {
     offset += 2/current_zoom;
   }
 
-  // FIXME take into account *current_group* transformation
-
   // loop and transform our bounding box until we reach our first rotation
   var tlist = svgedit.transformlist.getTransformList(selected);
   var m = svgedit.math.transformListToTransform(tlist).matrix;
+  // Take into account *current_group* transformation (currently only 1 level deep)
+  if (selectorManager_.context !== null) {
+    m = svgedit.math.matrixMultiply(svgedit.math.transformListToTransform(selectorManager_.context.transform.baseVal).matrix, m);
+  }
 
   // This should probably be handled somewhere else, but for now
   // it keeps the selection box correctly positioned when zoomed
@@ -276,6 +278,8 @@ svgedit.select.Selector.prototype.resize = function() {
 
 // Class: svgedit.select.SelectorManager
 svgedit.select.SelectorManager = function() {
+  this.context = null;
+
   // this will hold the <g> element that contains all selector rects/grips
   this.selectorParentGroup = null;
 

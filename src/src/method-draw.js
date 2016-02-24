@@ -684,6 +684,8 @@
       // FIXME update *transform* attribute on selectorManager.selectorParentGroup
       // take a look at svgcanvas.js:8959 or grep for *selectorManager.selectorParentGroup.setAttribute*
       var contextChanged = function(win, context) {
+        svgCanvas.selectorManager.context = context;
+        // console.log('contextChanged', context);
         var link_str = '';
         if(context) {
           var str = '';
