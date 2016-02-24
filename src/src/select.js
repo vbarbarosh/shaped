@@ -14,6 +14,7 @@
 // 4) svgutils.js
 
 var svgedit = svgedit || {};
+var svgroot = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
 (function() {
 
@@ -155,9 +156,14 @@ svgedit.select.Selector.prototype.resize = function() {
   // loop and transform our bounding box until we reach our first rotation
   var tlist = svgedit.transformlist.getTransformList(selected);
   var m = svgedit.math.transformListToTransform(tlist).matrix;
-  // Take into account *current_group* transformation (currently only 1 level deep)
+
+  // Take into account *current_group* transformation
   if (selectorManager_.context !== null) {
-    m = svgedit.math.matrixMultiply(svgedit.math.transformListToTransform(selectorManager_.context.transform.baseVal).matrix, m);
+    var tmp = svgroot.createSVGMatrix();
+    $(selectorManager_.context).parentsUntil('#svgcontent > g').andSelf().map(function () {
+      tmp = svgedit.math.matrixMultiply(tmp, svgedit.math.getMatrix(this));
+    });
+    m = svgedit.math.matrixMultiply(tmp, m);
   }
 
   // This should probably be handled somewhere else, but for now
