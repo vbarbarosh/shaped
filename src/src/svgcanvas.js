@@ -1453,6 +1453,7 @@ var recalculateDimensions = this.recalculateDimensions = function(selected) {
   }
 
   // depends on browser.js /supportsNativeSVGTransformLists_
+  // take a look at math.js /transformListToTransform
   tlist.initialize(tlist.consolidate());
 
 /*
