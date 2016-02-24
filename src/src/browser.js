@@ -118,14 +118,19 @@ var supportsNonScalingStroke_ = (function() {
   return rect.style.vectorEffect === 'non-scaling-stroke';
 })();
 
+// necessary for svgcanvas.js /tlist.initialize(tlist.consolidate())
+var supportsNativeSVGTransformLists_ = true;
+/*
 var supportsNativeSVGTransformLists_ = (function() {
   var rect = document.createElementNS(svgns, 'rect');
   var rxform = rect.transform.baseVal;
   
   var t1 = svg.createSVGTransform();
   rxform.appendItem(t1);
+  // FIXME even if SVGTransformList is supported the following will yield false
   return rxform.getItem(0) == t1;
 })();
+*/
 
 var supportsBlobs_ = (function() {
   if (typeof Blob != 'function') return false;

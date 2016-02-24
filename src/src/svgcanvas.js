@@ -1451,7 +1451,11 @@ var recalculateDimensions = this.recalculateDimensions = function(selected) {
     selected.removeAttribute("transform");
     return null;
   }
-  
+
+  // depends on browser.js /supportsNativeSVGTransformLists_
+  tlist.initialize(tlist.consolidate());
+
+/*
   // TODO: Make this work for more than 2
   if (tlist) {
     var k = tlist.numberOfItems;
@@ -1486,7 +1490,8 @@ var recalculateDimensions = this.recalculateDimensions = function(selected) {
       tlist.appendItem(mt);
     }
   }
-  
+*/
+
   // If it still has a single [M] or [R][M], return null too (prevents BatchCommand from being returned).
   switch ( selected.tagName ) {
     // Ignore these elements, as they can absorb the [M]
