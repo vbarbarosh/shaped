@@ -829,17 +829,16 @@ svgedit.path.Path.prototype.selectPt = function(pt, ctrl_num) {
 };
 
 // Update position of all points
-svgedit.path.Path.prototype.update = function() {
+svgedit.path.Path.prototype.update = function () {
   var elem = this.elem;
-  if(svgedit.utilities.getRotationAngle(elem)) {
-    this.matrix = svgedit.math.getMatrix(elem);
-    this.imatrix = this.matrix.inverse();
-  } else {
-    this.matrix = null;
-    this.imatrix = null;
-  }
 
-  this.eachSeg(function(i) {
+  this.matrix = svgedit.select.getSelectorManager().getContextMatrix();
+  if (svgedit.utilities.getRotationAngle(elem)) {
+    this.matrix = svgedit.math.matrixMultiply(this.matrix, svgedit.math.getMatrix(elem));
+  }
+  this.imatrix = this.matrix.inverse();
+
+  this.eachSeg(function (i) {
     this.item = elem.pathSegList.getItem(i);
     this.update();
   });
