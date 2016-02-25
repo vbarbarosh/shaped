@@ -158,13 +158,7 @@ svgedit.select.Selector.prototype.resize = function() {
   var m = svgedit.math.transformListToTransform(tlist).matrix;
 
   // Take into account *current_group* transformation
-  if (selectorManager_.context !== null) {
-    var tmp = svgroot.createSVGMatrix();
-    $(selectorManager_.context).parentsUntil('#svgcontent > g').andSelf().map(function () {
-      tmp = svgedit.math.matrixMultiply(tmp, svgedit.math.getMatrix(this));
-    });
-    m = svgedit.math.matrixMultiply(tmp, m);
-  }
+  m = svgedit.math.matrixMultiply(selectorManager_.getContextMatrix(), m);
 
   // This should probably be handled somewhere else, but for now
   // it keeps the selection box correctly positioned when zoomed
@@ -320,6 +314,17 @@ svgedit.select.SelectorManager = function() {
   };
 
   this.initGroup();
+};
+
+// Transformation matrix for *current_group*
+svgedit.select.SelectorManager.prototype.getContextMatrix = function () {
+  var result = svgroot.createSVGMatrix();
+  if (this.context !== null) {
+    $(this.context).parentsUntil('#svgcontent > g').andSelf().map(function () {
+      result = svgedit.math.matrixMultiply(result, svgedit.math.getMatrix(this));
+    });
+  }
+  return result;
 };
 
 // Function: svgedit.select.SelectorManager.initGroup
