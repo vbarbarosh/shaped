@@ -31,7 +31,7 @@ if test $current_branch != $source_branch; then
 fi
 
 cd $d
-grunt
+bin/build
 
 rm -rf __tmp_dir
 cp -r $dir __tmp_dir
