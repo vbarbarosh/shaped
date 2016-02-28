@@ -18,20 +18,30 @@ fi
 d=`cd $scriptdir; git rev-parse --show-toplevel`
 
 dir=build
-branch=latest-development
+source_branch=master
+target_branch=build-$source_branch
 current_branch=`cd $scriptdir; git rev-parse --abbrev-ref HEAD`
 
-cd $d
-bin/build
+if test $current_branch != $source_branch; then
+    if test $# -lt 1 || test "$1" != --force; then
+        echo error: current branch is not *$source_branch*
+        echo error: use --force to force deployment
+        exit 1
+    fi
+fi
 
+cd $d
+grunt
+
+rm -rf __tmp_dir
 cp -r $dir __tmp_dir
 git branch -D __tmp || true
-git branch -D $branch || true
-git push origin :$branch || true
+git branch -D $target_branch || true
+git push origin :$target_branch || true
 git checkout --orphan __tmp
 git add __tmp_dir
 git commit -m 'initial commit'
-git subtree split --prefix=__tmp_dir -b $branch
+git subtree split --prefix=__tmp_dir -b $target_branch
 git checkout $current_branch
 git branch -D __tmp
-git push origin $branch
+git push origin $target_branch
