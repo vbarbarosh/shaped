@@ -1,5 +1,9 @@
+#svg_editor {
+    background: none;
+}
+
 #menu_bar {
-    padding-left: 225px;
+    margin-left: 175px;
 }
 
 #tools_left {
@@ -24,4 +28,8 @@ div#workarea {
 
 #tools_bottom {
     left: 225px;
+}
+
+#cur_context_panel {
+    left: 242px;
 }
