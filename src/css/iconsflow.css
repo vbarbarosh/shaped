@@ -1,0 +1,27 @@
+#menu_bar {
+    padding-left: 225px;
+}
+
+#tools_left {
+    left: 175px;
+}
+
+#rulers #ruler_corner {
+    left: 225px;
+}
+
+#ruler_x {
+    left: 241px;
+}
+
+#ruler_y {
+    left: 225px;
+}
+
+div#workarea {
+    left: 225px;
+}
+
+#tools_bottom {
+    left: 225px;
+}

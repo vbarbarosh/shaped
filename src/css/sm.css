@@ -17,3 +17,11 @@
 .z5 {
     z-index: 5;
 }
+
+.o25 {
+    opacity: 0.25;
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}

@@ -198,18 +198,6 @@ html, body {
   background: #3F3F3C;
 }
 
-#gallery {
-  position: absolute;
-  background: white;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 175px;
-  opacity: 0.25;
-  z-index: 5;
-  pointer-events: none;
-}
-
 #rulers > div {
   position: absolute;
   background: #2f2f2c;
