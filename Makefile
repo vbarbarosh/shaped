@@ -43,6 +43,8 @@ CSS_FILES=\
 	lib/jgraduate/css/jPicker.css \
 	lib/jgraduate/css/jgraduate.css \
 	css/method-draw.css \
+	css/iconsflow.css \
+	css/sm.css
 
 JS_INPUT_FILES=$(addprefix src/, $(JS_FILES))
 CSS_INPUT_FILES=$(addprefix src/, $(CSS_FILES))
@@ -65,6 +67,9 @@ build:
 	# Make build directory and copy all editor contents into it
 	mkdir -p build
 	cp -r src/* build/
+	rm build/css/sm.css
+	rm build/css/iconsflow.css
+	rm build/css/method-draw.css
 
 	# Remove all hidden .svn directories
 	-find build/ -name .svn -type d | xargs rm -rf {} \;
