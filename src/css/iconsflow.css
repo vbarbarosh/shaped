@@ -3,7 +3,21 @@
 }
 
 #menu_bar {
-    margin-left: 175px;
+    padding: 0;
+    background: #f88;
+}
+
+#menu_bar > :first-child {
+    width: 175px;
+}
+
+#menu_bar.active .menu.open .menu_title,
+.menu_list {
+    background: #f88;
+}
+
+.menu_title {
+    color: black;
 }
 
 #tools_left {
