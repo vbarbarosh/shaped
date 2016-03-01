@@ -1,3 +1,5 @@
+/* Colors */
+
 body {
     background: #23469a;
     background: -moz-linear-gradient(top,  #23469a 0%, #10abfb 100%, #cdeaf7 100%);
@@ -15,7 +17,7 @@ body {
 }
 
 div#workarea {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 #tools_bottom {
@@ -31,8 +33,34 @@ div#workarea {
     background: white;
 }
 
-#menu_bar > :first-child {
-    width: 175px;
+.menu_title {
+    color: black;
+}
+
+.draginput {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.draginput input,
+.draginput span {
+    color: white;
+}
+
+#tool_angle_indicator_cursor,
+.draginput_cursor {
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.draginput .caret {
+    border-top-color: rgba(255, 255, 255, 0.8);
+}
+
+#tools_left {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.draginput_cell {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 #menu_bar.active .menu.open .menu_title,
@@ -40,8 +68,17 @@ div#workarea {
     background: #f88;
 }
 
+
+
+
+
+/* Layout */
+
+#menu_bar > :first-child {
+    width: 175px;
+}
+
 .menu_title {
-    color: black;
     padding: 10px;
 }
 
@@ -50,7 +87,6 @@ div#workarea {
     left: 175px;
     width: auto;
     height: 36px;
-    background: rgba(255, 0, 0, 0.25);
 }
 
 #tools_left > div {
@@ -114,4 +150,8 @@ div#workarea {
 
 #cur_context_panel {
     left: 242px;
+}
+
+#zoom {
+    vertical-align: middle;
 }
