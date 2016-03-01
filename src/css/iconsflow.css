@@ -60,7 +60,9 @@ div#workarea {
 }
 
 .draginput_cell {
+    border-color: transparent;
     background: rgba(255, 255, 255, 0.2);
+    outline: none;
 }
 
 #menu_bar.active .menu.open .menu_title,
