@@ -4,7 +4,7 @@
 
 #menu_bar {
     padding: 0;
-    background: #f88;
+    background: rgba(255, 255, 255, 0.25);
 }
 
 #menu_bar > :first-child {
@@ -18,30 +18,40 @@
 
 .menu_title {
     color: black;
+    padding: 10px;
 }
 
 #tools_left {
+    top: 36px;
     left: 175px;
 }
 
 #rulers #ruler_corner {
+    top: 36px;
     left: 225px;
 }
 
 #ruler_x {
+    top: 36px;
     left: 241px;
 }
 
 #ruler_y {
+    top: 36px;
     left: 225px;
 }
 
 div#workarea {
+    top: 36px;
     left: 225px;
 }
 
 #tools_bottom {
     left: 225px;
+}
+
+#tools_top {
+    top: 36px;
 }
 
 #cur_context_panel {
