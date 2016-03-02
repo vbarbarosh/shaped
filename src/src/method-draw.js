@@ -3766,6 +3766,10 @@
       }
       
       function updateRulers(scanvas, zoom) {
+
+        var textColor = '#777'; // '#fff'
+        var strokeStyle = '#666'; // 'rgba(255, 255, 255, 0.2)';
+
         var workarea = document.getElementById("workarea");
         var title_show = document.getElementById("title_show");
         var offset_x = 66;
@@ -3803,10 +3807,10 @@
           var ctx_num = 0;
           var ctx_arr;
           var ctx = hcanv.getContext("2d");
-          
-          ctx.fillStyle = "rgb(200,0,0)"; 
+
+          ctx.fillStyle = '#000';
           ctx.fillRect(0,0,hcanv.width,hcanv.height); 
-          
+
           // Remove any existing canvasses
           $hcanv.siblings().remove();
           
@@ -3845,7 +3849,7 @@
           
           var big_int = multi * u_multi;
           ctx.font = "normal 9px 'Lucida Grande', sans-serif";
-          ctx.fillStyle = "#777";
+          ctx.fillStyle = textColor;// "#777";
 
           var ruler_d = ((content_d / u_multi) % multi) * u_multi;
           var label_pos = ruler_d - big_int;
@@ -3882,12 +3886,12 @@
             
             if(is_x) {
               ctx.fillText(label, ruler_d+2, 8);
-              ctx.fillStyle = "#777";
+              ctx.fillStyle = textColor; // "#777";
             } else {
               var str = (label+'').split('');
               for(var i = 0; i < str.length; i++) {
                 ctx.fillText(str[i], 1, (ruler_d+9) + i*9);
-                ctx.fillStyle = "#777";
+                ctx.fillStyle = textColor; // "#777";
               }
             }
             
@@ -3917,7 +3921,7 @@
               }
             }
           }
-          ctx.strokeStyle = "#666";
+          ctx.strokeStyle = strokeStyle; // "#666";
           ctx.stroke();
         }
       }
