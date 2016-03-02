@@ -148,6 +148,9 @@ div#workarea {
 
 #tools_top {
     top: 72px;
+    bottom: 0;
+    height: auto;
+    overflow: auto;
 }
 
 #cur_context_panel {
