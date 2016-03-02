@@ -122,6 +122,10 @@ div#workarea {
     height: 6px;
 }
 
+#rulers {
+    display: none;
+}
+
 #rulers #ruler_corner {
     top: 72px;
     left: 175px;

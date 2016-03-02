@@ -43,7 +43,7 @@
       gridColor: "#000",
       baseUnit: 'px',
       snappingStep: 10,
-      showRulers: (svgedit.browser.isTouch()) ? false : true,
+      showRulers: false, // (svgedit.browser.isTouch()) ? false : true,
       show_outside_canvas: false,
       no_save_warning: true,
       initFont: 'Helvetica, Arial, sans-serif'
