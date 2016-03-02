@@ -173,7 +173,7 @@
       } else {
         extFunc();
       }
-      $.svgIcons(curConfig.imgPath + 'svg_edit_icons.svg', {
+      $.svgIcons(curConfig.imgPath + 'iconsflow.svg', {
         w:27, h:27,
         id_match: false,
         no_img: true, // Opera & Firefox 4 gives odd behavior w/images
