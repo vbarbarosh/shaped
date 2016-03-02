@@ -174,7 +174,8 @@
         extFunc();
       }
       $.svgIcons(curConfig.imgPath + 'iconsflow.svg', {
-        w:27, h:27,
+        w: 28,
+        h: 28,
         id_match: false,
         no_img: true, // Opera & Firefox 4 gives odd behavior w/images
         fallback_path: curConfig.imgPath,
@@ -1195,7 +1196,8 @@
             cb_ready = false; // Delay callback
 
           $.svgIcons(svgicons, {
-            w:27, h:27,
+            w: 28,
+            h: 28,
             id_match: false,
             no_img: (!isWebkit),
             fallback: fallback_obj,

@@ -56,12 +56,34 @@ div#workarea {
 }
 
 #tools_left {
-    background: rgba(255, 255, 255, 0.2);
-    background: red;
+    background: none;
 }
 
 #tools_left .tool_button.loaded {
-    background: white;
+    background: none;
+}
+
+#tools_left .tool_button.loaded svg {
+    fill: white;
+}
+
+#tools_left .tool_button:hover svg {
+    fill: black;
+}
+
+#tools_left .tool_button_current {
+    background: #1db7f5;
+}
+
+#tools_left .tool_button_current svg {
+    fill: white;
+}
+
+#tool_fhpath,
+#tool_line,
+#tools_shapelib_show,
+#tool_text {
+    display: none !important;
 }
 
 .draginput_cell {
@@ -100,6 +122,17 @@ div#workarea {
     display: inline-block;
     border: none;
     vertical-align: top;
+    border-radius: 100%;
+    margin: 4px;
+}
+
+#tools_left > div > svg {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #tools_left .tool_button:after, #tools_left .tool_button_current:after {
