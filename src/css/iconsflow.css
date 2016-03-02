@@ -57,6 +57,11 @@ div#workarea {
 
 #tools_left {
     background: rgba(255, 255, 255, 0.2);
+    background: red;
+}
+
+#tools_left .tool_button.loaded {
+    background: white;
 }
 
 .draginput_cell {
