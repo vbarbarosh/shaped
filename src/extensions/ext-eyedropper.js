@@ -66,7 +66,7 @@ methodDraw.addExtension("eyedropper", function(S) {
     
     return {
       name: "eyedropper",
-      svgicons: "extensions/eyedropper-icon.xml",
+      svgicons: "extensions/eyedropper-icon-iconsflow.xml",
       buttons: [{
         id: "tool_eyedropper",
         type: "mode",
