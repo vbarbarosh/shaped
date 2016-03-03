@@ -212,18 +212,15 @@ $(function() {
       
       if(!opts.no_img) {
         var testSrc = data_pre + 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNzUiIGhlaWdodD0iMjc1Ij48L3N2Zz4%3D';
-        
-        testImg = $(new Image()).attr({
-          src: testSrc,
-          width: 0,
-          height: 0
-        }).appendTo('body')
-        .load(function () {
-          // Safari 4 crashes, Opera and Chrome don't
-          makeIcons(true);
-        }).error(function () {
-          makeIcons();
-        });
+        testImg = $(new Image()).attr({src: testSrc, width: 0, height: 0}).appendTo('body')
+            .load(function () {
+              // Safari 4 crashes, Opera and Chrome don't
+              // makeIcons(true);
+              makeIcons();
+            })
+            .error(function () {
+              makeIcons();
+            });
       } else {
         setTimeout(function() {
           if(!icons_made) makeIcons();
