@@ -1,9 +1,109 @@
+.c {
+    text-align: center;
+}
+
+.r {
+    text-align: right;
+}
+
+.oa {
+    overflow: auto;
+}
+
+.vm {
+    vertical-align: middle;
+}
+
+.vt {
+    vertical-align: top;
+}
+
+.box {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.box16 {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+}
+
+.border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.block {
+    display: block;
+}
+
+.rel {
+    position: relative;
+}
+
+.abs {
+    position: absolute;
+}
+
 .abs-box {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.abs-box-image {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.p0 {
+    padding: 0;
+}
+
+.p5 {
+    padding: 5px;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.pr28 {
+    padding-right: 28px;
+}
+
+.pt100p {
+    padding-top: 100%;
+}
+
+.pt0 {
+    padding-top: 0;
+}
+
+.m0 {
+    margin: 0;
+}
+
+.ww {
+    width: 100%;
+}
+
+.w50 {
+    width: 50px;
 }
 
 .w175 {
@@ -24,4 +124,102 @@
 
 .no-pointer-events {
     pointer-events: none;
+}
+
+.border5-transparent {
+    border: 5px solid transparent;
+}
+
+.border5-transparent {
+    border: 5px solid transparent;
+}
+
+.border10-transparent {
+    border: 10px solid transparent;
+}
+
+.m5 {
+    margin: 5px;
+}
+
+.mg10 > :nth-child(n+2) {
+    margin-top: 10px;
+}
+
+.mig5 > :nth-child(n+2) {
+    margin-left: 5px;
+}
+
+.bs5 {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .75);
+}
+
+.bs10 {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .75);
+}
+
+.br5 {
+    border-radius: 5px;
+}
+
+.list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* display-flex */
+/* https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties */
+
+.flex,
+.flex-rows,
+.flex-rows-center,
+.flex-cols,
+.flex-cols-center
+{
+    display: flex;
+}
+
+.flex-rows,
+.flex-rows-center {
+    flex-direction: row;
+}
+
+.flex-rows-center {
+    justify-content: center;
+}
+
+.flex-cols {
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-align-start { align-items: flex-start; }
+.flex-align-end { align-items: flex-end; }
+.flex-align-center { align-items: center; }
+.flex-align-baseline { align-items: baseline; }
+.flex-align-stretch { align-items: stretch; }
+
+.flex-justify-start { justify-content: flex-start; }
+.flex-justify-end { justify-content: flex-end; }
+.flex-justify-center { justify-content: center; }
+.flex-justify-between { justify-content: space-between; }
+.flex-justify-around { justify-content: space-around; }
+
+/* http://compass-style.org/reference/compass/utilities/general/clearfix/ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
 }

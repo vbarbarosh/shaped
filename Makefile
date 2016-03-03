@@ -44,6 +44,7 @@ CSS_FILES=\
 	lib/jgraduate/css/jgraduate.css \
 	css/method-draw.css \
 	css/iconsflow.css \
+	css/grid.css \
 	css/sm.css
 
 JS_INPUT_FILES=$(addprefix src/, $(JS_FILES))
