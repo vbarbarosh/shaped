@@ -142,6 +142,10 @@
     margin: 5px;
 }
 
+.mg5 > :nth-child(n+2) {
+    margin-top: 5px;
+}
+
 .mg10 > :nth-child(n+2) {
     margin-top: 10px;
 }
