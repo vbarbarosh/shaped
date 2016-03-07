@@ -87,9 +87,38 @@ div#workarea {
 }
 
 .draginput_cell {
-    border-color: transparent;
+    /*border-color: transparent;*/
+    border: none;
     background: rgba(255, 255, 255, 0.2);
     outline: none;
+    padding: 10px;
+    width: 28px;
+    height: 28px;
+}
+
+.draginput_cell svg {
+    fill: white;
+}
+
+.draginput_cell:hover svg {
+    fill: black;
+}
+
+.draginput_cell:after {
+    display: none;
+}
+
+#tool_posleft,
+#tool_poscenter,
+#tool_posright {
+    margin-bottom: 1px;
+}
+
+#tool_posleft,
+#tool_poscenter,
+#tool_postop,
+#tool_posmiddle {
+    margin-right: 1px;
 }
 
 #menu_bar.active .menu.open .menu_title,
