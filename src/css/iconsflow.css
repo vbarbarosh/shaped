@@ -82,7 +82,8 @@ div#workarea {
 #tool_fhpath,
 #tool_line,
 #tools_shapelib_show,
-#tool_text {
+#tool_text,
+#stroke_panel {
     display: none !important;
 }
 
