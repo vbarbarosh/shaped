@@ -35,6 +35,7 @@ div#workarea {
 
 .menu_title {
     color: black;
+    height: 15px;
 }
 
 .draginput {
@@ -79,6 +80,7 @@ div#workarea {
     fill: white;
 }
 
+#tool_rulers,
 #tool_fhpath,
 #tool_line,
 #tools_shapelib_show,
@@ -124,7 +126,7 @@ div#workarea {
 
 #menu_bar.active .menu.open .menu_title,
 .menu_list {
-    background: #f88;
+    /*background: #f88;*/
 }
 
 
@@ -146,6 +148,7 @@ div#workarea {
     left: 175px;
     width: auto;
     height: 36px;
+    z-index: 0;
 }
 
 #tools_left > div {
@@ -216,6 +219,7 @@ div#workarea {
 
 #tools_bottom {
     left: 175px;
+    right: 175px;
 }
 
 #tools_top {
@@ -236,6 +240,10 @@ div#workarea {
 
 #zoom {
     vertical-align: middle;
+}
+
+#zoom_panel {
+    right: 0;
 }
 
 #zoomLabel {
