@@ -25,21 +25,21 @@ html, body {
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
-    background: #444;
+    background: none;
 }
 
 ::-webkit-scrollbar-track {
     border-radius: 10px;
-    background: #444;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #666;
+    background: rgba(255, 255, 255, 1);
 }
 
 ::-webkit-scrollbar-corner {
-  background: #444;
+  background: none;
 }
 
 #browser-not-supported {
