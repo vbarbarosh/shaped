@@ -238,6 +238,23 @@ div#workarea {
     vertical-align: middle;
 }
 
+#zoomLabel {
+    background: none;
+    top: 1px !important;
+}
+
+#zoomLabel:after {
+    display: none;
+}
+
+#zoomLabel svg {
+    fill: white;
+}
+
+#zoom_label input {
+    color: white;
+}
+
 
 
 
