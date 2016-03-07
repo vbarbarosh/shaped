@@ -1,3 +1,88 @@
+/* This module should come first in order to allow other
+ * modules overwhite display: block */
+/* References
+ *
+ * http://zzzzbov.com/blag/scalable-videos-with-aspect-ratio
+ * http://ansciath.tumblr.com/post/7347495869/css-aspect-ratio
+ * https://www.w3.org/TR/CSS2/box.html#propdef-padding-top
+ * > Percentages: refer to width of containing block
+ */
+.expand-1-1,
+.expand-1-2,
+.expand-1-3,
+.expand-2-1,
+.expand-2-3,
+.expand-3-1,
+.expand-3-2,
+.expand-3-4,
+.expand-4-3,
+.expand-9-16,
+.expand-16-9 {
+    /*
+      max-width: 100%;
+      */
+    display: block;
+    position: relative;
+    /*
+      > * {
+          !*display: block;*!
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+      */
+}
+.expand-1-1:before,
+.expand-1-2:before,
+.expand-1-3:before,
+.expand-2-1:before,
+.expand-2-3:before,
+.expand-3-1:before,
+.expand-3-2:before,
+.expand-3-4:before,
+.expand-4-3:before,
+.expand-9-16:before,
+.expand-16-9:before {
+    content: '';
+    display: block;
+}
+.expand-1-1:before {
+    padding-top: 100%;
+}
+.expand-1-2:before {
+    padding-top: 200%;
+}
+.expand-1-3:before {
+    padding-top: 300%;
+}
+.expand-2-1:before {
+    padding-top: 50%;
+}
+.expand-2-3:before {
+    padding-top: 150%;
+}
+.expand-3-1:before {
+    padding-top: 33.33%;
+}
+.expand-3-2:before {
+    padding-top: 66.66%;
+}
+.expand-3-4:before {
+    padding-top: 133.33%;
+}
+.expand-4-3:before {
+    padding-top: 75%;
+}
+.expand-9-16:before {
+    padding-top: 177.77%;
+}
+.expand-16-9:before {
+    padding-top: 56.25%;
+}
+
+
 .c {
     text-align: center;
 }
@@ -212,6 +297,10 @@
 .flex-justify-center { justify-content: center; }
 .flex-justify-between { justify-content: space-between; }
 .flex-justify-around { justify-content: space-around; }
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
 
 /* http://compass-style.org/reference/compass/utilities/general/clearfix/ */
 
