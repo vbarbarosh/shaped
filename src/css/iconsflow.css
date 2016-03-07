@@ -80,6 +80,8 @@ div#workarea {
     fill: white;
 }
 
+#tool_stroke,
+#tool_switch,
 #tool_rulers,
 #tool_fhpath,
 #tool_line,
@@ -128,6 +130,20 @@ div#workarea {
 .menu_list {
     /*background: #f88;*/
 }
+
+#tool_fill {
+    cursor: pointer;
+    box-shadow: none;
+    background: white;
+    border: 2px solid white;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+#tool_fill .color_block {
+    border: none;
+}
+
 
 
 
@@ -178,9 +194,34 @@ div#workarea {
     height: 36px;
 }
 
+#tool_fill {
+    width: 24px;
+    height: 24px;
+}
+
 #tool_fill .color_block {
-    width: 20px;
-    height: 20px;
+    top: -5px;
+    left: -5px;
+    width: 35px;
+    height: 35px;
+}
+
+#tool_fill {
+    margin: 3px;
+}
+
+#color_tools #tool_fill .color_block #fill_bg {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+}
+
+#color_tools #tool_fill .color_block #fill_color {
+    top: -5px;
+    left: -5px;
+    width: 35px;
+    height: 35px;
 }
 
 #color_tools #tool_stroke .color_block {
