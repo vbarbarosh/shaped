@@ -200,16 +200,32 @@
     width: 175px;
 }
 
+.black15 {
+    background: rgba(0, 0, 0, 0.15);
+}
+
 .white {
     background: white;
+}
+
+.z1 {
+    z-index: 1;
 }
 
 .z5 {
     z-index: 5;
 }
 
+.o0 {
+    opacity: 0;
+}
+
 .o25 {
     opacity: 0.25;
+}
+
+.o100 {
+    opacity: 1;
 }
 
 .no-pointer-events {
@@ -263,14 +279,18 @@
 }
 
 /* display-flex */
-/* https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties */
+
+/* References
+ *
+ * https://github.com/philipwalton/flexbugs
+ * https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties
+ */
 
 .flex,
 .flex-rows,
 .flex-rows-center,
 .flex-cols,
-.flex-cols-center
-{
+.flex-cols-center {
     display: flex;
 }
 
@@ -279,11 +299,14 @@
     flex-direction: row;
 }
 
+.flex-cols-center,
 .flex-rows-center {
+    align-items: center;
     justify-content: center;
 }
 
-.flex-cols {
+.flex-cols,
+.flex-cols-center {
     flex-direction: column;
 }
 
@@ -307,6 +330,14 @@
     flex-wrap: wrap;
 }
 
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-wrap-rev {
+    flex-wrap: wrap-reverse;
+}
+
 /* http://compass-style.org/reference/compass/utilities/general/clearfix/ */
 
 .clearfix {
@@ -320,4 +351,20 @@
     clear: both;
     overflow: hidden;
     visibility: hidden;
+}
+
+.transition-opacity-1000ms {
+    -webkit-transition: opacity 1000ms;
+    -moz-transition: opacity 1000ms;
+    -ms-transition: opacity 1000ms;
+    -o-transition: opacity 1000ms;
+    transition: opacity 1000ms;
+}
+
+.transition-opacity-250ms {
+    -webkit-transition: opacity 250ms;
+    -moz-transition: opacity 250ms;
+    -ms-transition: opacity 250ms;
+    -o-transition: opacity 250ms;
+    transition: opacity 250ms;
 }

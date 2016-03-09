@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
   <link rel="stylesheet" href="css/iconsflow.css" type="text/css"/>
   <link rel="stylesheet" href="css/grid.css" type="text/css"/>
+  <link rel="stylesheet" href="css/spinner.css" type="text/css"/>
   <link rel="stylesheet" href="css/sm.css" type="text/css"/>
 <!--{endif}-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -77,7 +78,13 @@
       </svg>
     </a>
   </div>
-  <div class="flex-grow oa">
+  <div class="flex-grow oa rel">
+    <div class="abs-box flex-rows-center z1 black15 no-pointer-events" v-bind:class="{o100: searching, 'transition-opacity-1000ms': searching, o0: !searching, 'transition-opacity-250ms': !searching}">
+      <div class="spinner">
+        <div class="dot1 bs10"></div>
+        <div class="dot2 bs10"></div>
+      </div>
+    </div>
     <ul class="list-reset flex-rows flex-wrap grid3">
       <li v-for="icon in icons" class="col1">
         <a href="#" class="expand-1-1 white m5 bs5 br5">
