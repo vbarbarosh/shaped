@@ -81,7 +81,7 @@
     <ul class="list-reset flex-rows flex-wrap grid3">
       <li v-for="icon in icons" class="col1">
         <a href="#" class="expand-1-1 white m5 bs5 br5">
-          <img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><path transform="matrix(1.3888888359069824 0 0 1.3888888359069824 -20.833332538604736 -18.749999284744263)" d="M69 44.8c-3.2 0-5.8-2.6-5.8-5.8s2.6-5.8 5.8-5.8 5.8 2.6 5.8 5.8-2.6 5.8-5.8 5.8z M15 25v49c0 2.2 1.8 4 4 4h64c2.2 0 4-1.8 4-4V25c0-2.2-1.8-4-4-4H19c-2.2 0-4 1.8-4 4zm66 47L68.1 56.5c-1.1-1.4-3.2-1.4-4.4-.2l-4.4 4.4c-1.2 1.2-3.3 1.2-4.4-.2L44.4 47.9c-1.2-1.5-3.5-1.4-4.7.1L21 72V27h60v45z"></path></svg>' class="abs-box-image p5" alt="" />
+          <img v-bind:src="icon | svgInline" xsrc='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><path transform="matrix(1.3888888359069824 0 0 1.3888888359069824 -20.833332538604736 -18.749999284744263)" d="M69 44.8c-3.2 0-5.8-2.6-5.8-5.8s2.6-5.8 5.8-5.8 5.8 2.6 5.8 5.8-2.6 5.8-5.8 5.8z M15 25v49c0 2.2 1.8 4 4 4h64c2.2 0 4-1.8 4-4V25c0-2.2-1.8-4-4-4H19c-2.2 0-4 1.8-4 4zm66 47L68.1 56.5c-1.1-1.4-3.2-1.4-4.4-.2l-4.4 4.4c-1.2 1.2-3.3 1.2-4.4-.2L44.4 47.9c-1.2-1.5-3.5-1.4-4.7.1L21 72V27h60v45z"></path></svg>' class="abs-box-image p5" alt="" />
         </a>
       </li>
     </ul>
