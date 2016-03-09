@@ -26,14 +26,15 @@ jQuery(function () {
             .spread(function (found, fetchResponse) {
                 var key, fetched = [];
                 for (key in fetchResponse) {
-                    fetched.push('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">' + fetchResponse[key].defs[0] + '</svg>');
+                    fetched.push(fetchResponse[key].defs[0]);
+                    // fetched.push('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">' + fetchResponse[key].defs[0] + '</svg>');
                 }
                 return [found, fetched];
             });
     }
 
-    Vue.filter('svgInline', function (svg) {
-        return 'data:image/svg+xml,' + svg;
+    Vue.filter('svgdef', function (def) {
+        return 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">' + def + '</svg>';
     });
 
     new Vue({
@@ -44,9 +45,24 @@ jQuery(function () {
             page: 1,
             pageSize: 1,
             found: 1,
-            icons: []
+            defs: []
         },
         methods: {
+            insertIconIntoCanvas: function (svg) {
+                var tmp = svgCanvas.getSvgString().split(/\s*<\/g>\s*<\/svg>\s*$/);
+                if (tmp.length == 2) {
+                    tmp[0] += svg;
+                    svgCanvas.setSvgString(tmp.join('</g></svg>'));
+                }
+            },
+            refreshPageSize: function () {
+                var pageSize = Math.floor(preview.height() / (preview.width() / 3))*3;
+                if (this.pageSize != pageSize) {
+                    this.pageSize = pageSize;
+                    this.page = 1;
+                    this.search();
+                }
+            },
             prev: function () {
                 if (this.page > 1) {
                     this.page = parseInt(this.page, 10) - 1;
@@ -60,21 +76,22 @@ jQuery(function () {
                 }
                 this.search();
             },
-            refreshPageSize: function () {
-                var pageSize = Math.floor(preview.height() / (preview.width() / 3))*3;
-                if (this.pageSize != pageSize) {
-                    this.pageSize = pageSize;
-                    this.page = 1;
-                    this.search();
-                }
+            searchTerm: function () {
+                this.page = 1;
+                this.found = 0;
+                this.search();
             },
-            search: function () {
+            searchPage: function () {
+                this.page = Math.max(1, Math.min(Math.ceil(this.found/this.pageSize), this.page));
+                this.search();
+            },
+            search: function (page) {
                 var _this = this;
                 this.searching += 1;
                 search(this.term, this.page, this.pageSize)
                     .spread(function (found, fetched) {
                         _this.found = found;
-                        _this.icons = fetched;
+                        _this.defs = fetched;
                     })
                     .catch(function (error) {
                         // Ignore ajax.abort() calls
@@ -89,7 +106,6 @@ jQuery(function () {
         },
         created: function () {
             this.refreshPageSize();
-            this.search();
             jQuery(window).on('resize', this.refreshPageSize.bind(this));
         },
         beforeDestroy: function () {
