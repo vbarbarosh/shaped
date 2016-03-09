@@ -79,13 +79,13 @@
     </a>
   </div>
   <div class="flex-grow oa rel">
-    <div class="abs-box flex-rows-center z1 black15 no-pointer-events" v-bind:class="{o100: searching, 'transition-opacity-1000ms': searching, o0: !searching, 'transition-opacity-250ms': !searching}">
+    <div class="abs-box flex-rows-center z1 no-pointer-events" v-bind:class="{o100: searching, o0: !searching, 'transition-opacity-1000ms': searching, 'transition-opacity-250ms': !searching}">
       <div class="spinner">
         <div class="dot1 bs10"></div>
         <div class="dot2 bs10"></div>
       </div>
     </div>
-    <ul class="list-reset flex-rows flex-wrap grid3">
+    <ul class="list-reset flex-rows flex-wrap grid3" v-bind:class="{o100: !searching, o50: searching, 'transition-opacity-1000ms': searching, 'transition-opacity-250ms': !searching}">
       <li v-for="def in defs" class="col1">
         <a v-on:click="insertIconIntoCanvas(def)" href="#" class="expand-1-1 white m5 bs5 br5">
           <img v-bind:src="def | svgdef" class="abs-box-image p5" alt="" />

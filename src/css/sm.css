@@ -224,6 +224,10 @@
     opacity: 0.25;
 }
 
+.o50 {
+    opacity: 0.5;
+}
+
 .o100 {
     opacity: 1;
 }
