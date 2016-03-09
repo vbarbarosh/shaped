@@ -27,6 +27,7 @@ JS_FILES=\
 	src/path.js \
 	src/svgcanvas.js \
 	src/method-draw.js \
+	src/iconsflow.js \
 	lib/jquery-draginput.js \
 	lib/contextmenu.js \
 	lib/jquery-ui/jquery-ui-1.8.17.custom.min.js \
@@ -45,6 +46,7 @@ CSS_FILES=\
 	css/method-draw.css \
 	css/iconsflow.css \
 	css/grid.css \
+	css/spinner.css \
 	css/sm.css
 
 JS_INPUT_FILES=$(addprefix src/, $(JS_FILES))
