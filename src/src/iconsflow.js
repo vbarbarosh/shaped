@@ -93,13 +93,15 @@ jQuery(function () {
                         _this.found = found;
                         _this.defs = fetched;
                     })
-                    .catch(function (error) {
+                    // catch -> caught: because of js compiler in Makefile
+                    .caught(function (error) {
                         // Ignore ajax.abort() calls
                         if (error.statusText != 'abort') {
                             console.error(error);
                         }
                     })
-                    .finally(function () {
+                    // finally -> lastly: because of js compiler in Makefile
+                    .lastly(function () {
                         _this.searching -= 1;
                     });
             }
