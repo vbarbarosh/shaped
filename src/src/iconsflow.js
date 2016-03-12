@@ -1,8 +1,6 @@
 jQuery(function () {
 
-    var searchUrl = '//search.iconsflow.com/search',
-        fetchUrl = '//localhost/iconmaker/src/backend/fetch-iconsflow.php',
-        ajax = null,
+    var ajax = null,
         cache = {
             search: {},
             fetch: {}
@@ -16,11 +14,11 @@ jQuery(function () {
             ajax = null;
         }
 
-        return Promise.resolve(cache.search[term] ? cache.search[term] : ajax = jQuery.ajax(searchUrl, {data: {term: term}}))
+        return Promise.resolve(cache.search[term] ? cache.search[term] : ajax = jQuery.ajax(methodDraw.curConfig.searchUrl, {data: {term: term}}))
             .then(function (searchResponse) {
                 var offset = (page - 1) * pageSize;
                 cache.search[term] = searchResponse;
-                ajax = jQuery.ajax(fetchUrl, {data: {icons: searchResponse.icons.slice(offset, offset + pageSize)}});
+                ajax = jQuery.ajax(methodDraw.curConfig.fetchUrl, {data: {icons: searchResponse.icons.slice(offset, offset + pageSize)}});
                 return [searchResponse.icons.length, Promise.resolve(ajax)];
             })
             .spread(function (found, fetchResponse) {

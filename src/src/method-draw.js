@@ -27,6 +27,8 @@
     var Editor = {};
     var is_ready = false;
     curConfig = {
+      searchUrl: '//search.iconsflow.com/search',
+      fetchUrl: '//localhost/iconmaker/src/backend/fetch-iconsflow.php',
       canvas_expansion: 1, 
       dimensions: [580,400], 
       initFill: {color: '9acee6', opacity: 1},
