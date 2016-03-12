@@ -21,14 +21,27 @@
   document.addEventListener("touchmove", touchHandler, true);
   document.addEventListener("touchend", touchHandler, true);
   document.addEventListener("touchcancel", touchHandler, true);
-  
+
+  // http://stackoverflow.com/a/2880929/1478566
+  var urlParams;
+  (function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+    urlParams = {};
+    while (match = search.exec(query))
+      urlParams[decode(match[1])] = decode(match[2]);
+  })();
+
   if(!window.methodDraw) window.methodDraw = function($) {
     var svgCanvas;
     var Editor = {};
     var is_ready = false;
     curConfig = {
-      searchUrl: '//search.iconsflow.com/search',
-      fetchUrl: '//localhost/iconmaker/src/backend/fetch-iconsflow.php',
+      searchUrl: urlParams['s'] || '//search.iconsflow.com/search',
+      fetchUrl: urlParams['f'] || '//localhost/iconmaker/src/backend/fetch-iconsflow.php',
       canvas_expansion: 1, 
       dimensions: [580,400], 
       initFill: {color: '9acee6', opacity: 1},
