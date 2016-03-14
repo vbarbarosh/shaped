@@ -87,7 +87,7 @@
     </div>
     <ul class="list-reset flex-rows flex-wrap grid3" v-bind:class="{o100: !searching, o50: searching, 'transition-opacity-1000ms': searching, 'transition-opacity-250ms': !searching}">
       <li v-for="def in defs" class="col1">
-        <a v-on:click="insertIconIntoCanvas(def)" href="#" class="expand-1-1 white m5 bs5 br5">
+        <a v-on:click="insertIconIntoCanvas(def)" href="#" class="expand-1-1 white m5 br5">
           <img v-bind:src="def | svgdef" class="abs-box-image p5" alt="" />
         </a>
       </li>
