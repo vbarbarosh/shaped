@@ -1,0 +1,66 @@
+.jGraduate_tabs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    background: white;
+}
+
+.jGraduate_tabs li {
+    margin: 0;
+}
+
+.jGraduate_colPick,
+.jGraduate_gradPick {
+    padding-top: 20px;
+}
+
+li.jGraduate_tab_current {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.jGraduate_tab_color,
+.jGraduate_tab_lingrad,
+.jGraduate_tab_radgrad {
+    position: relative;
+}
+
+.jGraduate_tab_color:before,
+.jGraduate_tab_lingrad:before,
+.jGraduate_tab_radgrad:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: white;
+    vertical-align: -5px;
+    border-radius: 100%;
+    border: 2px solid #dbdbdb;
+    margin-right: 7px;
+}
+
+.jGraduate_tab_color:after,
+.jGraduate_tab_lingrad:after,
+.jGraduate_tab_radgrad:after {
+    display: none;
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #1fb7f8;
+    border-radius: 100%;
+    top: 10px;
+    left: 15px;
+}
+
+.jGraduate_tab_color.jGraduate_tab_current:after,
+.jGraduate_tab_lingrad.jGraduate_tab_current:after,
+.jGraduate_tab_radgrad.jGraduate_tab_current:after {
+    display: block;
+}
