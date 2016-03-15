@@ -1,7 +1,232 @@
+#svg_editor #color_picker .Map,
+#svg_editor #color_picker .Bar {
+    border-color: #e2e2e2;
+}
+
+#svg_editor #color_picker .Bar {
+    margin-left: 10px;
+}
+
+#svg_editor #color_picker .Preview {
+    position: absolute;
+    top: 70px;
+    font-size: 12px;
+}
+
+#svg_editor #color_picker .Preview span {
+    border: none;
+    width: auto;
+    height: 31px;
+    position: relative;
+}
+
+#svg_editor #color_picker .Preview span:nth-child(1) {
+    border-radius: 5px 5px 0 0;
+}
+
+#svg_editor #color_picker .Preview span:nth-child(2) {
+    border-radius: 0 0 5px 5px;
+}
+
+#svg_editor #color_picker .Preview .color_preview {
+    border-radius: 5px;
+}
+
+#svg_editor #color_picker .Grid {
+    display: none;
+}
+
+#svg_editor #color_picker .Hue,
+#svg_editor #color_picker .Saturation,
+#svg_editor #color_picker .Value,
+#svg_editor #color_picker tr.Hex,
+#svg_editor #color_picker .Red,
+#svg_editor #color_picker .Green,
+#svg_editor #color_picker .Blue,
+#svg_editor #color_picker .Alpha {
+    position: absolute;
+}
+
+#svg_editor #color_picker .Hue label,
+#svg_editor #color_picker .Saturation label,
+#svg_editor #color_picker .Value label,
+#svg_editor #color_picker .Red label,
+#svg_editor #color_picker .Green label,
+#svg_editor #color_picker .Blue label,
+#svg_editor #color_picker .Alpha label {
+    text-align: right;
+    cursor: pointer;
+    color: #616161;
+}
+
+#svg_editor #color_picker .Hue input[type=radio],
+#svg_editor #color_picker .Saturation input[type=radio],
+#svg_editor #color_picker .Value input[type=radio],
+#svg_editor #color_picker .Red input[type=radio],
+#svg_editor #color_picker .Green input[type=radio],
+#svg_editor #color_picker .Blue input[type=radio],
+#svg_editor #color_picker .Alpha input[type=radio] {
+    position: relative;
+    left: -16px;
+    width: 0;
+}
+
+#svg_editor #color_picker .Hue input[type=radio]:before,
+#svg_editor #color_picker .Saturation input[type=radio]:before,
+#svg_editor #color_picker .Value input[type=radio]:before,
+#svg_editor #color_picker .Red input[type=radio]:before,
+#svg_editor #color_picker .Green input[type=radio]:before,
+#svg_editor #color_picker .Blue input[type=radio]:before,
+#svg_editor #color_picker .Alpha input[type=radio]:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: white;
+    vertical-align: -5px;
+    border-radius: 100%;
+    border: 2px solid #dbdbdb;
+    opacity: 0.5;
+    position: absolute;
+}
+
+#svg_editor #color_picker .Hue input[type=radio]:after,
+#svg_editor #color_picker .Saturation input[type=radio]:after,
+#svg_editor #color_picker .Value input[type=radio]:after,
+#svg_editor #color_picker .Red input[type=radio]:after,
+#svg_editor #color_picker .Green input[type=radio]:after,
+#svg_editor #color_picker .Blue input[type=radio]:after,
+#svg_editor #color_picker .Alpha input[type=radio]:after {
+    display: none;
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #b2b2b2;
+    border-radius: 100%;
+    top: 5px;
+    left: 5px;
+}
+
+#svg_editor #color_picker .Hue input[type=radio]:checked:after,
+#svg_editor #color_picker .Saturation input[type=radio]:checked:after,
+#svg_editor #color_picker .Value input[type=radio]:checked:after,
+#svg_editor #color_picker .Red input[type=radio]:checked:after,
+#svg_editor #color_picker .Green input[type=radio]:checked:after,
+#svg_editor #color_picker .Blue input[type=radio]:checked:after,
+#svg_editor #color_picker .Alpha input[type=radio]:checked:after {
+    display: block;
+}
+
+#svg_editor #color_picker .Hue input[type=text],
+#svg_editor #color_picker .Saturation input[type=text],
+#svg_editor #color_picker .Value input[type=text],
+#svg_editor #color_picker .Hex input[type=text],
+#svg_editor #color_picker .Red input[type=text],
+#svg_editor #color_picker .Green input[type=text],
+#svg_editor #color_picker .Blue input[type=text],
+#svg_editor #color_picker .Alpha input[type=text] {
+    background: white;
+    border: 2px solid #dbdbdb;
+    border-radius: 999px;
+    color: #616161;
+    padding: 2px 5px;
+    width: 30px;
+    outline: none;
+    height: 16px;
+}
+
+#svg_editor #color_picker .Hue .Radio,
+#svg_editor #color_picker .Saturation .Radio,
+#svg_editor #color_picker .Value .Radio,
+#svg_editor #color_picker .Hex .Radio,
+#svg_editor #color_picker .Red .Radio,
+#svg_editor #color_picker .Green .Radio,
+#svg_editor #color_picker .Blue .Radio,
+#svg_editor #color_picker .Alpha .Radio {
+    vertical-align: middle;
+}
+
+#svg_editor #color_picker .Hue .Text,
+#svg_editor #color_picker .Saturation .Text,
+#svg_editor #color_picker .Value .Text,
+#svg_editor #color_picker .Hex .Text,
+#svg_editor #color_picker .Red .Text,
+#svg_editor #color_picker .Green .Text,
+#svg_editor #color_picker .Blue .Text,
+#svg_editor #color_picker .Alpha .Text {
+    color: #dbdbdb;
+}
+
+#svg_editor #color_picker .Value .Text br {
+    display: none;
+}
+
+#svg_editor #color_picker .Hue,
+#svg_editor #color_picker .Saturation,
+#svg_editor #color_picker .Value,
+#svg_editor #color_picker .Hex {
+    left: 330px;
+}
+
+#svg_editor #color_picker .Red,
+#svg_editor #color_picker .Green,
+#svg_editor #color_picker .Blue,
+#svg_editor #color_picker .Alpha {
+    left: 450px;
+}
+
+#svg_editor #color_picker .Hue,
+#svg_editor #color_picker .Red {
+    top: 170px;
+}
+
+#svg_editor #color_picker .Saturation,
+#svg_editor #color_picker .Green {
+    top: 200px;
+}
+
+#svg_editor #color_picker .Value,
+#svg_editor #color_picker .Blue {
+    top: 230px;
+}
+
+#svg_editor #color_picker .Hex,
+#svg_editor #color_picker .Alpha {
+    top: 260px;
+}
+
+#svg_editor #color_picker .Button .Ok,
+#svg_editor #color_picker .Button .Cancel,
+#color_picker_jGraduate_Ok,
+#color_picker_jGraduate_Cancel {
+    background: white;
+    border: 2px solid #84ce2f;
+    border-radius: 999px;
+    color: #84ce2f;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1em;
+    padding: 4px 22px;
+    width: auto;
+    cursor: pointer;
+}
+
+#svg_editor #color_picker .Button .Cancel,
+#color_picker_jGraduate_Cancel {
+    left: auto;
+    right: 85px;
+    border-color: #c8c8c8;
+    color: #c8c8c8;
+}
+
 .jGraduate_tabs {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 17px;
+    left: 320px;
     padding: 0;
     margin: 0;
     background: white;
@@ -9,11 +234,6 @@
 
 .jGraduate_tabs li {
     margin: 0;
-}
-
-.jGraduate_colPick,
-.jGraduate_gradPick {
-    padding-top: 20px;
 }
 
 li.jGraduate_tab_current {
