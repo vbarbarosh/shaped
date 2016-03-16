@@ -43,6 +43,7 @@ JS_FILES=\
 CSS_FILES=\
 	lib/jgraduate/css/jPicker.css \
 	lib/jgraduate/css/jgraduate.css \
+	lib/jgraduate/css/iconsflow.css \
 	css/method-draw.css \
 	css/iconsflow.css \
 	css/grid.css \
