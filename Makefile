@@ -83,7 +83,7 @@ build:
 	# Create the release version of the main HTML file.
 	$(SHIP) --i=src/index.html --on=svg_edit_release > build/index.html
 	sed -i 's:css/method-draw.compiled.css:&?v$(VERSION):' build/index.html
-	sed -i 's:css/method-draw.compiled.js:&?v$(VERSION):' build/index.html
+	sed -i 's:method-draw.compiled.js:&?v$(VERSION):' build/index.html
 
 # NOTE: Some files are not ready for the Closure compiler: (jquery)
 # NOTE: Our code safely compiles under SIMPLE_OPTIMIZATIONS
