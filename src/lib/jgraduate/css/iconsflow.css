@@ -1,5 +1,6 @@
 #svg_editor #color_picker .Map,
-#svg_editor #color_picker .Bar {
+#svg_editor #color_picker .Bar,
+#svg_editor #color_picker #color_picker_jGraduate_GradContainer {
     border-color: #e2e2e2;
 }
 
@@ -128,7 +129,20 @@
 #svg_editor #color_picker .Red input[type=text],
 #svg_editor #color_picker .Green input[type=text],
 #svg_editor #color_picker .Blue input[type=text],
-#svg_editor #color_picker .Alpha input[type=text] {
+#svg_editor #color_picker .Alpha input[type=text],
+#svg_editor #color_picker #color_picker_jGraduate_x1,
+#svg_editor #color_picker #color_picker_jGraduate_y1,
+#svg_editor #color_picker #color_picker_jGraduate_x2,
+#svg_editor #color_picker #color_picker_jGraduate_y2,
+#svg_editor #color_picker #color_picker_jGraduate_OpacInput,
+#svg_editor #color_picker #color_picker_jGraduate_cx,
+#svg_editor #color_picker #color_picker_jGraduate_cy,
+#svg_editor #color_picker #color_picker_jGraduate_fx,
+#svg_editor #color_picker #color_picker_jGraduate_fy,
+#svg_editor #color_picker #color_picker_jGraduate_RadiusInput,
+#svg_editor #color_picker #color_picker_jGraduate_EllipInput,
+#svg_editor #color_picker #color_picker_jGraduate_AngleInput,
+#svg_editor #color_picker #color_picker_jGraduate_OpacInput {
     background: white;
     border: 2px solid #dbdbdb;
     border-radius: 999px;
@@ -169,7 +183,7 @@
 #svg_editor #color_picker .Saturation,
 #svg_editor #color_picker .Value,
 #svg_editor #color_picker .Hex {
-    left: 330px;
+    left: 327px;
 }
 
 #svg_editor #color_picker .Red,
@@ -181,22 +195,22 @@
 
 #svg_editor #color_picker .Hue,
 #svg_editor #color_picker .Red {
-    top: 170px;
+    top: 167px;
 }
 
 #svg_editor #color_picker .Saturation,
 #svg_editor #color_picker .Green {
-    top: 200px;
+    top: 196px;
 }
 
 #svg_editor #color_picker .Value,
 #svg_editor #color_picker .Blue {
-    top: 230px;
+    top: 225px;
 }
 
 #svg_editor #color_picker .Hex,
 #svg_editor #color_picker .Alpha {
-    top: 260px;
+    top: 254px;
 }
 
 #svg_editor #color_picker .Button .Ok,
@@ -225,8 +239,8 @@
 
 .jGraduate_tabs {
     position: absolute;
-    top: 17px;
-    left: 320px;
+    top: 15px;
+    left: 315px;
     padding: 0;
     margin: 0;
     background: white;
@@ -283,4 +297,80 @@ li.jGraduate_tab_current {
 .jGraduate_tab_lingrad.jGraduate_tab_current:after,
 .jGraduate_tab_radgrad.jGraduate_tab_current:after {
     display: block;
+}
+
+/* Linear and Radial Gradients */
+
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(2),
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(3) {
+    margin-top: 38px;
+    margin-left: 24px;
+    margin-right: -999999px;
+}
+
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(2) > :nth-child(1) .jGraduate_Form_Section,
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(2) > :nth-child(2) .jGraduate_Form_Section,
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(3) > :nth-child(1) .jGraduate_Form_Section,
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(3) > :nth-child(2) .jGraduate_Form_Section {
+    background: white;
+    padding: 0;
+}
+
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(2) label,
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(3) label {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0;
+    line-height: 1em;
+    margin: 6px 2px 0 0;
+}
+
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(2) label.jGraduate_Form_Heading,
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(3) label.jGraduate_Form_Heading {
+    margin: 0 0 5px;
+}
+
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(3) > :nth-child(2) .jGraduate_Form_Section {
+    position: relative;
+    overflow: visible;
+}
+
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(3) > :nth-child(2) .jGraduate_Form_Section > br {
+    display: none;
+}
+
+#svg_editor #color_picker .jGraduate_gradPick > :nth-child(3) > :nth-child(2) .jGraduate_Form_Section > :first-child {
+    position: absolute;
+    top: 60px;
+}
+
+#svg_editor #color_picker #color_picker_jGraduate_x1,
+#svg_editor #color_picker #color_picker_jGraduate_x2,
+#svg_editor #color_picker #color_picker_jGraduate_cx,
+#svg_editor #color_picker #color_picker_jGraduate_fx {
+    margin-bottom: 5px;
+}
+
+#color_picker_jGraduate_Opac,
+#color_picker_jGraduate_Radius,
+#color_picker_jGraduate_Ellip,
+#color_picker_jGraduate_Angle {
+    background: #e2e2e2;
+    height: 8px;
+    border: none;
+    border-radius: 999px;
+    margin-top: 7px;
+}
+
+#color_picker_jGraduate_Opac img,
+#color_picker_jGraduate_Radius img,
+#color_picker_jGraduate_Ellip img,
+#color_picker_jGraduate_Angle img {
+    width: 0;
+    height: 0;
+    padding: 7px;
+    background: white;
+    border: 2px solid #e2e2e2;
+    border-radius: 999px;
+    margin-top: -5px;
 }

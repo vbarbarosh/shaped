@@ -317,7 +317,7 @@ jQuery.fn.jGraduate =
             
       var attr_input = {};
             
-            var SLIDERW = 145;
+            var SLIDERW = 130;
             $('.jGraduate_SliderBar').width(SLIDERW);
       
       var container = $('#' + id+'_jGraduate_GradContainer')[0];
