@@ -725,7 +725,7 @@ jQuery.fn.jGraduate =
         x2: MAX + 10,
         y2: 15,
         'stroke-width': 2,
-        stroke: '#000'
+        stroke: '#e2e2e2'
       }, stopMakerSVG);
       
       

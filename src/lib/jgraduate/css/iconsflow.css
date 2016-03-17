@@ -190,7 +190,7 @@
 #svg_editor #color_picker .Green,
 #svg_editor #color_picker .Blue,
 #svg_editor #color_picker .Alpha {
-    left: 450px;
+    left: 455px;
 }
 
 #svg_editor #color_picker .Hue,
@@ -211,6 +211,10 @@
 #svg_editor #color_picker .Hex,
 #svg_editor #color_picker .Alpha {
     top: 254px;
+}
+
+#svg_editor #color_picker .jPicker tr.Hex td.Text input.Hex {
+    margin-left: 6px;
 }
 
 #svg_editor #color_picker .Button .Ok,
@@ -359,7 +363,8 @@ li.jGraduate_tab_current {
     height: 8px;
     border: none;
     border-radius: 999px;
-    margin-top: 7px;
+    margin-top: 8px;
+    left: 5px;
 }
 
 #color_picker_jGraduate_Opac img,
@@ -373,4 +378,32 @@ li.jGraduate_tab_current {
     border: 2px solid #e2e2e2;
     border-radius: 999px;
     margin-top: -5px;
+}
+
+.jGraduate_Slider {
+    margin: 4px 0 5px;
+}
+
+.jGraduate_gradPick .jGraduate_Form {
+    top: 166px;
+    margin-left: 7px;
+    width: 269px;
+}
+
+.jGraduate_gradPick div.jGraduate_Slider label:last-child input {
+    margin: 0;
+}
+
+#color_picker_jGraduate_AngleInput {
+    position: relative;
+    left: -3px;
+}
+
+.jGraduate_gradPick div.jGraduate_Slider label:last-child {
+    right: 10px;
+}
+
+.jGraduate_Slider label.prelabel {
+    position: relative;
+    top: 2px;
 }
