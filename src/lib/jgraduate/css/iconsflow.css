@@ -1,3 +1,7 @@
+#svg_editor #color_picker {
+    height: 324px;
+}
+
 #svg_editor #color_picker .Map,
 #svg_editor #color_picker .Bar,
 #svg_editor #color_picker #color_picker_jGraduate_GradContainer {
@@ -34,7 +38,21 @@
 }
 
 #svg_editor #color_picker .Grid {
-    display: none;
+    position: absolute;
+    top: 70px;
+    left: 423px;
+    width: 132px;
+    background: none !important;
+}
+
+#svg_editor #color_picker .Grid .QuickColor {
+    margin: 0 5px 5px 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #dcdcdc;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
 }
 
 #svg_editor #color_picker .Hue,
@@ -231,12 +249,18 @@
     padding: 4px 22px;
     width: auto;
     cursor: pointer;
+    bottom: 20px;
+}
+
+#svg_editor #color_picker .Button .Ok,
+#color_picker_jGraduate_Ok {
+    right: 20px;
 }
 
 #svg_editor #color_picker .Button .Cancel,
 #color_picker_jGraduate_Cancel {
     left: auto;
-    right: 85px;
+    right: 100px;
     border-color: #c8c8c8;
     color: #c8c8c8;
 }
