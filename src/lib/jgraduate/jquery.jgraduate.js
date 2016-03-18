@@ -517,11 +517,13 @@ jQuery.fn.jGraduate =
         }
         if(opac === null) opac = 1;
         
-        var picker_d = 'M-6.2,0.9c3.6-4,6.7-4.3,6.7-12.4c-0.2,7.9,3.1,8.8,6.5,12.4c3.5,3.8,2.9,9.6,0,12.3c-3.1,2.8-10.4,2.7-13.2,0C-9.6,9.9-9.4,4.4-6.2,0.9z';
-        
+        // var picker_d = 'M-6.2,0.9c3.6-4,6.7-4.3,6.7-12.4c-0.2,7.9,3.1,8.8,6.5,12.4c3.5,3.8,2.9,9.6,0,12.3c-3.1,2.8-10.4,2.7-13.2,0C-9.6,9.9-9.4,4.4-6.2,0.9z';
+        var picker_bg = 'M.976-7.686l-.43-.29-.42.29a28.062 28.062 0 0 0-4.153 3.642C-6.642-1.282-7.95 1.253-7.95 3.56c0 2.336.83 4.334 2.492 5.995 1.66 1.654 3.662 2.48 6.004 2.48 2.348 0 4.356-.826 6.024-2.48 1.66-1.66 2.49-3.66 2.49-5.994 0-2.307-1.306-4.842-3.92-7.604A27.796 27.796 0 0 0 .975-7.686m-.43 1.5c1.567 1.18 2.942 2.442 4.122 3.783C6.623-.188 7.6 1.8 7.6 3.56c0 1.936-.687 3.59-2.06 4.964-1.382 1.368-3.046 2.05-4.994 2.05-1.94 0-3.603-.682-4.983-2.05C-5.805 7.15-6.49 5.496-6.49 3.56c0-1.76.978-3.748 2.933-5.963A27.99 27.99 0 0 1 .546-6.185';
+        var picker_d = 'M4.158.1C3.164-.896 1.96-1.393.546-1.393c-1.4 0-2.602.497-3.603 1.49-1 .988-1.5 2.185-1.5 3.593s.5 2.606 1.5 3.593c1 .994 2.202 1.49 3.603 1.49 1.414 0 2.618-.496 3.612-1.49 1-.987 1.5-2.185 1.5-3.592S5.16 1.087 4.16.1z';
+
         var pathbg = mkElem('path',{
-          d: picker_d,
-          fill: 'url(#jGraduate_trans)',
+          d: picker_bg,
+          fill: '#e2e2e2', // 'url(#jGraduate_trans)',
           transform: 'translate(' + (10 + n * MAX) + ', 26)'
         }, stopGroup);
         
@@ -530,8 +532,8 @@ jQuery.fn.jGraduate =
           fill: color,
           'fill-opacity': opac,
           transform: 'translate(' + (10 + n * MAX) + ', 26)',
-          stroke: '#000',
-          'stroke-width': 1.5
+          stroke: 'transparent',
+          'stroke-width': 15 // 1.5
         }, stopGroup);
 
         $(path).mousedown(function(e) {
@@ -612,8 +614,8 @@ jQuery.fn.jGraduate =
 
       
       function selectStop(item) {
-        if(cur_stop) cur_stop.setAttribute('stroke', '#000');
-        item.setAttribute('stroke', 'blue');
+        // if(cur_stop) cur_stop.setAttribute('stroke', '#000');
+        // item.setAttribute('stroke', 'blue');
         cur_stop = item;
         cur_stop.parentNode.appendChild(cur_stop);
       //  stops = $('stop');
