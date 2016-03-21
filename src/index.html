@@ -70,7 +70,7 @@
 <body>
 <div id="svg_editor">
 
-<div id="gallery" class="flex-cols abs-box w175 p5 border-box mg5" style="top: 36px;">
+<div id="gallery" class="flex-cols abs-box w175 p5 border-box mg5" style="display: none; top: 36px;" v-show="true">
   <div class="rel ph5">
     <input v-on:keyup.enter="searchTerm" v-model="term" class="input pr28" type="text" placeholder="Search cliparts..." />
     <a v-on:click="search" class="box16 abs" style="top: 5px; right: 15px;" href="#">

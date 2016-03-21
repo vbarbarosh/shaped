@@ -104,7 +104,7 @@ jQuery(function () {
                     });
             }
         },
-        created: function () {
+        ready: function () {
             this.refreshPageSize();
             jQuery(window).on('resize', this.refreshPageSize.bind(this));
         },
