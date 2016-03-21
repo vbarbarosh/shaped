@@ -431,3 +431,20 @@ li.jGraduate_tab_current {
     position: relative;
     top: 2px;
 }
+
+/* FIXME It will cut arrow at the very beginning and very end */
+#svg_editor #color_picker .jPicker td:nth-child(2) {
+    overflow: hidden;
+}
+
+#svg_editor #color_picker .jPicker td:nth-child(2) .Bar {
+    overflow: visible;
+}
+
+#svg_editor #color_picker .jPicker td:nth-child(2) .Arrow {
+    margin-left: 21px;
+    width: 0;
+    height: 0;
+    padding: 4px 4px 5px 4px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAYAAAAPU20uAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AMVEhMCarQ7/wAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAACcSURBVBjTTY7BkYMwEAR7VBcEh38oDC9OHumyQH5BEYXmHjbY89vqrZ5R7x1JnFmWxecdEZJtbCOJWquHYWCaJrXWfBwHCYMkSikXlETOWb13frBZSvE4juScP13vpPJXffsdmXKW7QvYJqVEukdo33fas13jzk22SQDxmLVtG601f0PbJPPSPmJ+md5P67oaQN1GX721Vp+GiNA/rOppTeXVBs4AAAAASUVORK5CYII=);
+}
