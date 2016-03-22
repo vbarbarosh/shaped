@@ -85,40 +85,42 @@
 #svg_editor #color_picker .Green input[type=radio],
 #svg_editor #color_picker .Blue input[type=radio],
 #svg_editor #color_picker .Alpha input[type=radio] {
-    position: relative;
-    left: -16px;
-    width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: red;
+    opacity: 0;
 }
 
-#svg_editor #color_picker .Hue input[type=radio]:before,
-#svg_editor #color_picker .Saturation input[type=radio]:before,
-#svg_editor #color_picker .Value input[type=radio]:before,
-#svg_editor #color_picker .Red input[type=radio]:before,
-#svg_editor #color_picker .Green input[type=radio]:before,
-#svg_editor #color_picker .Blue input[type=radio]:before,
-#svg_editor #color_picker .Alpha input[type=radio]:before {
+#svg_editor #color_picker .Hue input[type=radio] + span,
+#svg_editor #color_picker .Saturation input[type=radio] + span,
+#svg_editor #color_picker .Value input[type=radio] + span,
+#svg_editor #color_picker .Red input[type=radio] + span,
+#svg_editor #color_picker .Green input[type=radio] + span,
+#svg_editor #color_picker .Blue input[type=radio] + span,
+#svg_editor #color_picker .Alpha input[type=radio] + span {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    content: '';
-    display: block;
     width: 18px;
     height: 18px;
     background: white;
-    vertical-align: -5px;
     border-radius: 100%;
     border: 2px solid #dbdbdb;
-    opacity: 0.5;
     position: absolute;
+    top: 3px;
+    left: -2px;
 }
 
-#svg_editor #color_picker .Hue input[type=radio]:after,
-#svg_editor #color_picker .Saturation input[type=radio]:after,
-#svg_editor #color_picker .Value input[type=radio]:after,
-#svg_editor #color_picker .Red input[type=radio]:after,
-#svg_editor #color_picker .Green input[type=radio]:after,
-#svg_editor #color_picker .Blue input[type=radio]:after,
-#svg_editor #color_picker .Alpha input[type=radio]:after {
+#svg_editor #color_picker .Hue input[type=radio] + span:before,
+#svg_editor #color_picker .Saturation input[type=radio] + span:before,
+#svg_editor #color_picker .Value input[type=radio] + span:before,
+#svg_editor #color_picker .Red input[type=radio] + span:before,
+#svg_editor #color_picker .Green input[type=radio] + span:before,
+#svg_editor #color_picker .Blue input[type=radio] + span:before,
+#svg_editor #color_picker .Alpha input[type=radio] + span:before {
     display: none;
     content: '';
     position: absolute;
@@ -126,17 +128,17 @@
     height: 8px;
     background: #b2b2b2;
     border-radius: 100%;
-    top: 5px;
-    left: 5px;
+    top: 3px;
+    left: 3px;
 }
 
-#svg_editor #color_picker .Hue input[type=radio]:checked:after,
-#svg_editor #color_picker .Saturation input[type=radio]:checked:after,
-#svg_editor #color_picker .Value input[type=radio]:checked:after,
-#svg_editor #color_picker .Red input[type=radio]:checked:after,
-#svg_editor #color_picker .Green input[type=radio]:checked:after,
-#svg_editor #color_picker .Blue input[type=radio]:checked:after,
-#svg_editor #color_picker .Alpha input[type=radio]:checked:after {
+#svg_editor #color_picker .Hue input[type=radio]:checked + span:before,
+#svg_editor #color_picker .Saturation input[type=radio]:checked + span:before,
+#svg_editor #color_picker .Value input[type=radio]:checked + span:before,
+#svg_editor #color_picker .Red input[type=radio]:checked + span:before,
+#svg_editor #color_picker .Green input[type=radio]:checked + span:before,
+#svg_editor #color_picker .Blue input[type=radio]:checked + span:before,
+#svg_editor #color_picker .Alpha input[type=radio]:checked + span:before{
     display: block;
 }
 
