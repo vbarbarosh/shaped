@@ -50,8 +50,6 @@
     width: 24px;
     height: 24px;
     border: 2px solid #dcdcdc;
-    -webkit-border-radius: 999px;
-    -moz-border-radius: 999px;
     border-radius: 999px;
 }
 
@@ -101,8 +99,6 @@
 #svg_editor #color_picker .Green input[type=radio] + span,
 #svg_editor #color_picker .Blue input[type=radio] + span,
 #svg_editor #color_picker .Alpha input[type=radio] + span {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 18px;
     height: 18px;
@@ -281,8 +277,6 @@
 }
 
 li.jGraduate_tab_current {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
     border-radius: 0;
 }
 
@@ -295,8 +289,6 @@ li.jGraduate_tab_current {
 .jGraduate_tab_color:before,
 .jGraduate_tab_lingrad:before,
 .jGraduate_tab_radgrad:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     content: '';
     display: inline-block;
