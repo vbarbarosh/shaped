@@ -12,7 +12,7 @@
 // 1) units.js
 // 2) everything else
 
-methodDraw.addExtension("view_grid", function(s) {
+if (false) methodDraw.addExtension("view_grid", function(s) {
     if (!document.getElementById("canvasGrid")){
     var svgdoc = document.getElementById("svgcanvas").ownerDocument,
             svgns = "http://www.w3.org/2000/svg",
