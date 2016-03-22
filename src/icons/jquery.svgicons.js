@@ -270,8 +270,8 @@ $(function() {
             .attr({
               'class':'svg_icon',
               src: path + imgsrc,
-              'width': icon_w,
-              'height': icon_h,
+              'width': '100%', // icon_w,
+              'height': '100%', // icon_h,
               'alt': 'icon'
             });
           
@@ -300,8 +300,8 @@ $(function() {
           
           // Not using jQuery to be a bit faster
           svgroot.setAttribute('xmlns', svgns);
-          svgroot.setAttribute('width', icon_w);
-          svgroot.setAttribute('height', icon_h);
+          svgroot.setAttribute('width', '100%');//icon_w);
+          svgroot.setAttribute('height', '100%');//icon_h);
           svgroot.setAttribute("xmlns:xlink", xlinkns);
           svgroot.setAttribute("class", 'svg_icon');
 
