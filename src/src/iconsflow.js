@@ -32,7 +32,11 @@ jQuery(function () {
     }
 
     Vue.filter('svgdef', function (def) {
-        return 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">' + def + '</svg>';
+        var svg = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">' + def + '</svg>';
+        // IE doesn't work with this
+        // return 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">' + def + '</svg>';
+        // return 'data:image/svg+xml;base64,' + btoa(svg);
+        return 'data:image/svg+xml;base64,' + svgedit.utilities.encode64(svg);
     });
 
     new Vue({
