@@ -151,6 +151,14 @@
     max-height: 100%;
 }
 
+.t2 {
+    top: 2px;
+}
+
+.l7 {
+    left: 7px;
+}
+
 .p0 {
     padding: 0;
 }
@@ -186,6 +194,10 @@
 
 .ww {
     width: 100%;
+}
+
+.w35 {
+    width: 35px;
 }
 
 .w50 {
@@ -388,4 +400,8 @@
 .transition-opacity-250ms {
     -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
+}
+
+.cursor-auto {
+    cursor: auto;
 }
