@@ -406,4 +406,4 @@
     cursor: auto;
 }
 
-.xd-force { display: none important! }
+.xd-force { display: none !important; }
