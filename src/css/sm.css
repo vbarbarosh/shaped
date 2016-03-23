@@ -405,3 +405,5 @@
 .cursor-auto {
     cursor: auto;
 }
+
+.xd-force { display: none important! }
