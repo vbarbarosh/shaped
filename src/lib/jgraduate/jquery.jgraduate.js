@@ -524,16 +524,16 @@ jQuery.fn.jGraduate =
         var pathbg = mkElem('path',{
           d: picker_bg,
           fill: '#e2e2e2', // 'url(#jGraduate_trans)',
-          transform: 'translate(' + (10 + n * MAX) + ', 26)'
+          transform: 'translate(' + (10 + n * MAX) + ', 26) scale(1.4)'
         }, stopGroup);
         
         var path = mkElem('path',{
           d: picker_d,
           fill: color,
           'fill-opacity': opac,
-          transform: 'translate(' + (10 + n * MAX) + ', 26)',
+          transform: 'translate(' + (10 + n * MAX) + ', 26) scale(1.4)',
           stroke: 'transparent',
-          'stroke-width': 15 // 1.5
+          'stroke-width': 10 // 1.5
         }, stopGroup);
 
         $(path).mousedown(function(e) {
@@ -656,7 +656,7 @@ jQuery.fn.jGraduate =
         var y = evt.pageY - stop_offset.top;
         x = x < 10 ? 10 : x > MAX + 10 ? MAX + 10: x;
 
-        var xf_str = 'translate(' + x + ', 26)';
+        var xf_str = 'translate(' + x + ', 26) scale(1.4)';
           if(y < -60 || y > 130) {
             delStop.setAttribute('display', 'block');
             delStop.setAttribute('transform', xf_str);
@@ -685,7 +685,7 @@ jQuery.fn.jGraduate =
       }
       
       stopMakerSVG = mkElem('svg', {
-        width: '100%',
+        width: '105%',
         height: 45
       }, stopMakerDiv[0]);
       
