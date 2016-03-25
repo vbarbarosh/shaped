@@ -44,6 +44,7 @@
 
 #svg_editor #color_picker .Preview .color_preview {
     border-radius: 5px;
+    border: 1px solid #e2e2e2;
 }
 
 #svg_editor #color_picker .Grid {
