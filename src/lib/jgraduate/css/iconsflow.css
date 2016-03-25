@@ -7,7 +7,7 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
 }
 
-#svg_editor #color_picker input {
+#svg_editor #color_picker input[type=text] {
     font-size: 13px;
 }
 
