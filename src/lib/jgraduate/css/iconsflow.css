@@ -2,6 +2,10 @@
     height: 324px;
 }
 
+#svg_editor #color_picker input {
+    font-size: 13px;
+}
+
 #svg_editor #color_picker .Map,
 #svg_editor #color_picker .Bar,
 #svg_editor #color_picker #color_picker_jGraduate_GradContainer {
@@ -187,8 +191,15 @@
 #svg_editor #color_picker .Red .Text,
 #svg_editor #color_picker .Green .Text,
 #svg_editor #color_picker .Blue .Text,
-#svg_editor #color_picker .Alpha .Text {
-    color: #dbdbdb;
+#svg_editor #color_picker .Alpha .Text,
+#svg_editor #color_picker .jGraduate_gradPick div.jGraduate_Slider label:last-child {
+    color: #606060;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#svg_editor #color_picker .jGraduate_gradPick div.jGraduate_Slider label:last-child span {
+    vertical-align: -2px;
 }
 
 #svg_editor #color_picker .Value .Text br {
@@ -206,7 +217,7 @@
 #svg_editor #color_picker .Green,
 #svg_editor #color_picker .Blue,
 #svg_editor #color_picker .Alpha {
-    left: 455px;
+    left: 458px;
 }
 
 #svg_editor #color_picker .Hue,
@@ -260,7 +271,9 @@
     left: auto;
     right: 100px;
     border-color: #c8c8c8;
-    color: #c8c8c8;
+    color: #606060;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .jGraduate_tabs {
@@ -408,17 +421,13 @@ li.jGraduate_tab_current {
     width: 269px;
 }
 
+.jGraduate_gradPick div.jGraduate_Slider label:last-child {
+    right: auto;
+    left: 201px;
+}
+
 .jGraduate_gradPick div.jGraduate_Slider label:last-child input {
     margin: 0;
-}
-
-#color_picker_jGraduate_AngleInput {
-    position: relative;
-    left: -3px;
-}
-
-.jGraduate_gradPick div.jGraduate_Slider label:last-child {
-    right: 10px;
 }
 
 .jGraduate_Slider label.prelabel {
