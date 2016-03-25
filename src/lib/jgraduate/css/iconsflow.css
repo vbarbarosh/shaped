@@ -2,6 +2,11 @@
     height: 324px;
 }
 
+#svg_editor #color_picker,
+#svg_editor div.jGraduate_stopPicker {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+}
+
 #svg_editor #color_picker input {
     font-size: 13px;
 }
