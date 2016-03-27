@@ -1,3 +1,15 @@
+#svg_editor #menu_bar .menu .menu_title {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #153b69;
+}
+
+#svg_editor #menu_bar.active .menu.open .menu_title {
+    color: #1cc5fc;
+}
+
 #svg_editor #color_picker {
     height: 324px;
 }
