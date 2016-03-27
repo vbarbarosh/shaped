@@ -26,12 +26,12 @@ html, body {
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
-    background: none;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 ::-webkit-scrollbar-track {
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.5);
+    background: none;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -40,7 +40,7 @@ html, body {
 }
 
 ::-webkit-scrollbar-corner {
-  background: none;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 #browser-not-supported {
