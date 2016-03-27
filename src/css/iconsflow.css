@@ -1,14 +1,33 @@
 /* Colors */
 
 body {
-    background: #23469a;
-    background: -webkit-linear-gradient(top,  #23469a 0%,#10abfb 100%,#cdeaf7 100%);
-    background: linear-gradient(to bottom,  #23469a 0%,#10abfb 100%,#cdeaf7 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23469a', endColorstr='#cdeaf7',GradientType=0 );
+    background: #1c4c96;
+    background: -moz-linear-gradient(top,  #1c4c96 0%, #15b5cf 100%);
+    background: -webkit-linear-gradient(top,  #1c4c96 0%,#15b5cf 100%);
+    background: linear-gradient(to bottom,  #1c4c96 0%,#15b5cf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c4c96', endColorstr='#15b5cf',GradientType=0 );
 }
 
 #svg_editor {
     background: none;
+}
+
+/* Menu */
+
+#svg_editor #menu_bar .menu .menu_title {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #153b69;
+}
+
+#svg_editor #menu_bar.active .menu.open .menu_title {
+    color: #1cc5fc;
+}
+
+#svg_editor #color_picker {
+    height: 324px;
 }
 
 #svgcanvas {
