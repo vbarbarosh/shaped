@@ -265,6 +265,7 @@
     width: auto;
     cursor: pointer;
     bottom: 20px;
+    outline: none;
 }
 
 #svg_editor #color_picker .Button .Ok,
@@ -276,7 +277,7 @@
 #color_picker_jGraduate_Cancel {
     left: auto;
     right: 100px;
-    border-color: #c8c8c8;
+    border-color: #606060; /*#c8c8c8;*/
     color: #606060;
     padding-left: 16px;
     padding-right: 16px;
