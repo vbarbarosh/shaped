@@ -277,6 +277,7 @@
     color: #606060;
     padding-left: 16px;
     padding-right: 16px;
+    box-shadow: none;
 }
 
 .jGraduate_tabs {
