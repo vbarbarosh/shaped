@@ -1582,16 +1582,16 @@
         
         // update history buttons
         if (undoMgr.getUndoStackSize() > 0) {
-          $('#tool_undo').removeClass( 'disabled');
+          $('#tool_undo, #tool_undo2').removeClass( 'disabled');
         }
         else {
-          $('#tool_undo').addClass( 'disabled');
+          $('#tool_undo, #tool_undo2').addClass( 'disabled');
         }
         if (undoMgr.getRedoStackSize() > 0) {
-          $('#tool_redo').removeClass( 'disabled');
+          $('#tool_redo, #tool_redo2').removeClass( 'disabled');
         }
         else {
-          $('#tool_redo').addClass( 'disabled');
+          $('#tool_redo, #tool_redo2').addClass( 'disabled');
         }
         
         svgCanvas.addedNew = false;
@@ -3250,8 +3250,8 @@
           {sel:'#tool_ungroup', fn: clickGroup, evt: 'click', key: modKey + 'shift+G'},
           {sel:'#tool_unlink_use', fn: clickGroup, evt: 'click'},
           {sel:'[id^=tool_align]', fn: clickAlign, evt: 'click'},
-          {sel:'#tool_undo', fn: clickUndo, evt: 'click', key: modKey + 'z'},
-          {sel:'#tool_redo', fn: clickRedo, evt: 'click', key: ['y', true]},
+          {sel:'#tool_undo,#tool_undo2', fn: clickUndo, evt: 'click', key: modKey + 'z'},
+          {sel:'#tool_redo,#tool_redo2', fn: clickRedo, evt: 'click', key: ['y', true]},
           {sel:'#tool_cut', fn: cutSelected, evt: 'click', key: [modKey+'x', true]},
           {sel:'#tool_copy', fn: copySelected, evt: 'click', key: modKey+'c'},
           {sel:'#tool_paste', fn: pasteSelected, evt: 'click', key: modKey+'v'},
