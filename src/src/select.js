@@ -454,7 +454,7 @@ svgedit.select.SelectorManager.prototype.initGroup = function() {
       'fill': "#eee"
     }
   })
-  
+
   var pattern_square2 = svgFactory_.createSVGElement({
     'element': 'rect',
     'attr': {
@@ -491,6 +491,48 @@ svgedit.select.SelectorManager.prototype.initGroup = function() {
   canvasbg.appendChild(rect);
 
   svgFactory_.svgRoot().insertBefore(canvasbg, svgFactory_.svgContent());
+
+
+  var clippingMask = svgFactory_.createSVGElement({
+    element: 'mask',
+    attr: {
+      id: 'clippingMask'
+    }
+  });
+
+  clippingMask.appendChild(svgFactory_.createSVGElement({
+    element: 'rect',
+    attr: {
+      x: 0,
+      y: 0,
+      width: '100%',
+      height: '100%',
+      fill: 'rgba(255,255,255,0.5)'
+    }
+  }));
+
+  clippingMask.appendChild(svgFactory_.createSVGElement({
+    element: 'rect',
+    attr: {
+      id: 'clippingMaskHole',
+      x: 0,
+      y: 0,
+      width: dims[0],
+      height: dims[1],
+      fill: 'white'
+    }
+  }));
+
+  var clippingGroup = svgFactory_.createSVGElement({
+    'element': 'g',
+    'attr': {
+      id: 'clippingGroup',
+      'mask': 'url(#clippingMask)'
+    }
+  });
+  svgFactory_.svgRoot().appendChild(clippingMask);
+  svgFactory_.svgRoot().appendChild(clippingGroup);
+
 };
 
 // Function: svgedit.select.SelectorManager.requestSelector

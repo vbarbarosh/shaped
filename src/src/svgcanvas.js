@@ -6023,9 +6023,9 @@ this.setSvgString = function(xmlString) {
 
     // remove old svg document
     var nextSibling = svgcontent.nextSibling;
-    var oldzoom = svgroot.removeChild(svgcontent);
+    var oldzoom = svgcontent.parentNode.removeChild(svgcontent); // svgroot.removeChild(svgcontent);
     batchCmd.addSubCommand(new RemoveElementCommand(oldzoom, nextSibling, svgroot));
-  
+
     // set new svg document
     // If DOM3 adoptNode() available, use it. Otherwise fall back to DOM2 importNode()
     if(svgdoc.adoptNode) {
@@ -6047,7 +6047,7 @@ this.setSvgString = function(xmlString) {
     } else {
       call("unsetnonce");
     }
-    
+
     // change image href vals if possible
     content.find('image').each(function() {
       var image = this;
@@ -6094,7 +6094,7 @@ this.setSvgString = function(xmlString) {
     setUseData(content);
     
     convertGradients(content[0]);
-    
+
     // recalculate dimensions on the top-level children so that unnecessary transforms
     // are removed
     svgedit.utilities.walkTreePost(svgcontent, function(n){try{recalculateDimensions(n)}catch(e){console.log(e)}});
@@ -6179,8 +6179,11 @@ this.setSvgString = function(xmlString) {
     svgedit.transformlist.resetListMap();
     clearSelection();
     svgedit.path.clearData();
+    var clippingGroup = document.getElementById('clippingGroup');
+    clippingGroup.appendChild(svgcontent);
+    svgroot.appendChild(clippingGroup);
     svgroot.appendChild(selectorManager.selectorParentGroup);
-    
+
     addCommandToHistory(batchCmd);
     call("changed", [svgcontent]);
   } catch(e) {
@@ -8944,7 +8947,14 @@ this.updateCanvas = function(w, h) {
     'y': y,
     "viewBox" : "0 0 " + this.contentW + " " + this.contentH
   });
-  
+
+  assignAttributes($('#clippingMaskHole').get(0), {
+    width: svgcontent.getAttribute('width'),
+    height: svgcontent.getAttribute('height'),
+    'x': x,
+    'y': y
+  });
+
   assignAttributes(bg, {
     width: svgcontent.getAttribute('width'),
     height: svgcontent.getAttribute('height'),

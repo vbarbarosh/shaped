@@ -59,7 +59,7 @@
       baseUnit: 'px',
       snappingStep: 10,
       showRulers: false, // (svgedit.browser.isTouch()) ? false : true,
-      show_outside_canvas: false,
+      show_outside_canvas: true,
       no_save_warning: true,
       initFont: 'Helvetica, Arial, sans-serif'
     },
