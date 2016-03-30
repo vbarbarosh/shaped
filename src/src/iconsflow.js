@@ -14,7 +14,7 @@ jQuery(function () {
             ajax = null;
         }
 
-        return Promise.resolve(cache.search[term] ? cache.search[term] : ajax = jQuery.ajax(methodDraw.curConfig.searchUrl, {data: {term: term}}))
+        return Promise.resolve(cache.search[term] ? cache.search[term] : ajax = jQuery.ajax(methodDraw.curConfig.searchUrl, {data: {lang: tt.lang, term: term}}))
             .then(function (searchResponse) {
                 var offset = (page - 1) * pageSize;
                 cache.search[term] = searchResponse;
@@ -39,10 +39,18 @@ jQuery(function () {
         return 'data:image/svg+xml;base64,' + svgedit.utilities.encode64(svg);
     });
 
+    // Just for translation
+    new Vue({
+        el: '#svg_editor',
+        methods: {
+            tt: window.tt
+        }
+    });
+
     new Vue({
         el: '#gallery',
         data: {
-            term: 'animal',
+            term: tt('animals'),
             searching: false,
             page: 1,
             pageSize: 1,
@@ -50,6 +58,7 @@ jQuery(function () {
             defs: []
         },
         methods: {
+            tt: window.tt,
             insertIconIntoCanvas: function (svg) {
                 var tmp = svgCanvas.getSvgString().split(/\s*<\/g>\s*<\/svg>\s*$/);
                 if (tmp.length == 2) {

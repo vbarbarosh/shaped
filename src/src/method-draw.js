@@ -23,14 +23,13 @@
   document.addEventListener("touchcancel", touchHandler, true);
 
   // http://stackoverflow.com/a/2880929/1478566
-  var urlParams;
+  var urlParams = {};
   (function () {
     var match,
         pl     = /\+/g,  // Regex for replacing addition symbol with a space
         search = /([^&=]+)=?([^&]*)/g,
         decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
         query  = window.location.search.substring(1);
-    urlParams = {};
     while (match = search.exec(query))
       urlParams[decode(match[1])] = decode(match[2]);
   })();
@@ -65,44 +64,42 @@
     },
       uiStrings = Editor.uiStrings = {
         common: {
-          "ok":"OK",
-          "cancel":"Cancel",
-          "key_up":"Up",
-          "key_down":"Down",
-          "key_backspace":"Backspace",
-          "key_del":"Del"
-  
+          "ok": tt('OK'),
+          "cancel": tt('Cancel'),
+          "key_up": tt('Up'),
+          "key_down": tt('Down'),
+          "key_backspace": tt('Backspace'),
+          "key_del": tt('Del')
         },
         // This is needed if the locale is English, since the locale strings are not read in that instance.
         layers: {
-          "layer":"Layer"
+          "layer": tt('Layer')
         },
         notification: {
-          "invalidAttrValGiven":"Invalid value given",
-          "noContentToFitTo":"No content to fit to",
-          "dupeLayerName":"There is already a layer named that!",
-          "enterUniqueLayerName":"Please enter a unique layer name",
-          "enterNewLayerName":"Please enter the new layer name",
-          "layerHasThatName":"Layer already has that name",
-          "QmoveElemsToLayer":"Move selected elements to layer \"%s\"?",
-          "QwantToClear":"<strong>Do you want to clear the drawing?</strong>\nThis will also erase your undo history",
-          "QwantToOpen":"Do you want to open a new file?\nThis will also erase your undo history",
-          "QerrorsRevertToSource":"There were parsing errors in your SVG source.\nRevert back to original SVG source?",
-          "QignoreSourceChanges":"Ignore changes made to SVG source?",
-          "featNotSupported":"Feature not supported",
-          "enterNewImgURL":"Enter the new image URL",
-          "defsFailOnSave": "NOTE: Due to a bug in your browser, this image may appear wrong (missing gradients or elements). It will however appear correct once actually saved.",
-          "loadingImage":"Loading image, please wait...",
-          "saveFromBrowser": "Select \"Save As...\" in your browser to save this image as a %s file.",
-          "noteTheseIssues": "Also note the following issues: ",
-          "unsavedChanges": "There are unsaved changes.",
-          "enterNewLinkURL": "Enter the new hyperlink URL",
-          "errorLoadingSVG": "Error: Unable to load SVG data",
-          "URLloadFail": "Unable to load from URL",
-          "retrieving": 'Retrieving "%s" ...'
+          "invalidAttrValGiven": tt('Invalid value given'),
+          "noContentToFitTo": tt('No content to fit to'),
+          "dupeLayerName": tt('There is already a layer named that!'),
+          "enterUniqueLayerName": tt('Please enter a unique layer name'),
+          "enterNewLayerName": tt('Please enter the new layer name'),
+          "layerHasThatName": tt('Layer already has that name'),
+          "QmoveElemsToLayer": tt('Move selected elements to layer "%s"?'),
+          "QwantToClear": tt('<strong>Do you want to clear the drawing?</strong>\nThis will also erase your undo history'),
+          "QwantToOpen": tt('Do you want to open a new file?\nThis will also erase your undo history'),
+          "QerrorsRevertToSource": tt('There were parsing errors in your SVG source.\nRevert back to original SVG source?'),
+          "QignoreSourceChanges": tt('Ignore changes made to SVG source?'),
+          "featNotSupported": tt('Feature not supported'),
+          "enterNewImgURL": tt('Enter the new image URL'),
+          "defsFailOnSave": tt('NOTE: Due to a bug in your browser, this image may appear wrong (missing gradients or elements). It will however appear correct once actually saved.'),
+          "loadingImage": tt('Loading image, please wait...'),
+          "saveFromBrowser": tt('Select "Save As..." in your browser to save this image as a "%s" file.'),
+          "noteTheseIssues": tt('Also note the following issues:'),
+          "unsavedChanges": tt('There are unsaved changes.'),
+          "enterNewLinkURL": tt('Enter the new hyperlink URL'),
+          "errorLoadingSVG": tt('Error: Unable to load SVG data'),
+          "URLloadFail": tt('Unable to load from URL'),
+          "retrieving": tt('Retrieving "%s" ...')
         }
       };
-    
 
     var curPrefs = {}; //$.extend({}, defaultPrefs);
     var customHandlers = {};

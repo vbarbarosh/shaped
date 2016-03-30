@@ -9,6 +9,8 @@ YUICOMPRESSOR=bin/vendor/yuicompressor-2.4.7.jar
 # All files that will be compiled by the Closure compiler.
 
 JS_FILES=\
+	src/tt.js \
+	src/iconsflow.js \
 	lib/pathseg.js \
 	lib/touch.js \
 	lib/js-hotkeys/jquery.hotkeys.min.js \
@@ -27,7 +29,6 @@ JS_FILES=\
 	src/path.js \
 	src/svgcanvas.js \
 	src/method-draw.js \
-	src/iconsflow.js \
 	lib/jquery-draginput.js \
 	lib/contextmenu.js \
 	lib/jquery-ui/jquery-ui-1.8.17.custom.min.js \
