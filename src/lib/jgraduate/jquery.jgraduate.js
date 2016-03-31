@@ -118,7 +118,7 @@ $.jGraduate = {
 jQuery.fn.jGraduateDefaults = {
   paint: new $.jGraduate.Paint(),
   window: {
-    pickerTitle: "Drag markers to pick a paint"
+    pickerTitle: tt('Drag markers to pick a paint')
   },
   images: {
     clientPath: "images/"
@@ -160,7 +160,7 @@ jQuery.fn.jGraduate =
       
             if (!idref)
             {
-              alert('Container element must have an id attribute to maintain unique id strings for sub-elements.');
+              alert(tt('Container element must have an id attribute to maintain unique id strings for sub-elements'));
               return;
             }
             
@@ -202,9 +202,9 @@ jQuery.fn.jGraduate =
       
             $this.addClass('jGraduate_Picker');
             $this.html('<ul class="jGraduate_tabs">' +
-                    '<li class="jGraduate_tab_color jGraduate_tab_current" data-type="col">Solid</li>' +
-                    '<li class="jGraduate_tab_lingrad" data-type="lg">Linear</li>' +
-                    '<li class="jGraduate_tab_radgrad" data-type="rg">Radial</li>' +
+                    '<li class="jGraduate_tab_color jGraduate_tab_current" data-type="col">' + tt('Solid') + '</li>' +
+                    '<li class="jGraduate_tab_lingrad" data-type="lg">' + tt('Linear') + '</li>' +
+                    '<li class="jGraduate_tab_radgrad" data-type="rg">' + tt('Radial') + '</li>' +
                   '</ul>' +
                   '<div class="jGraduate_colPick"></div>' +
                   '<div class="jGraduate_gradPick"></div>' +
@@ -224,88 +224,88 @@ jQuery.fn.jGraduate =
               '</div>' + 
               '<div class="jGraduate_Form jGraduate_Points jGraduate_lg_field">' +
                 '<div class="jGraduate_StopSection">' +
-                  '<label class="jGraduate_Form_Heading">Begin Point</label>' +
+                  '<label class="jGraduate_Form_Heading">' + tt('Begin Point') + '</label>' +
                   '<div class="jGraduate_Form_Section">' +
                     '<label>x:</label>' +
-                    '<input type="text" id="' + id + '_jGraduate_x1" size="3" title="Enter starting x value between 0.0 and 1.0"/>' +
-                    '<label> y:</label>' +
-                    '<input type="text" id="' + id + '_jGraduate_y1" size="3" title="Enter starting y value between 0.0 and 1.0"/>' +
+                    '<input type="text" id="' + id + '_jGraduate_x1" size="3" title="' + tt('Enter starting x value between 0.0 and 1.0') + '"/>' +
+                    '<label>y:</label>' +
+                    '<input type="text" id="' + id + '_jGraduate_y1" size="3" title="' + tt('Enter starting y value between 0.0 and 1.0') + '"/>' +
                   '</div>' +
                 '</div>' +
                 '<div class="jGraduate_StopSection">' +
-                  '<label class="jGraduate_Form_Heading">End Point</label>' +
+                  '<label class="jGraduate_Form_Heading">' + tt('End Point') + '</label>' +
                   '<div class="jGraduate_Form_Section">' +
                     '<label>x:</label>' +
-                    '<input type="text" id="' + id + '_jGraduate_x2" size="3" title="Enter ending x value between 0.0 and 1.0"/>' +
-                    '<label> y:</label>' +
-                    '<input type="text" id="' + id + '_jGraduate_y2" size="3" title="Enter ending y value between 0.0 and 1.0"/>' +
+                    '<input type="text" id="' + id + '_jGraduate_x2" size="3" title="' + tt('Enter ending x value between 0.0 and 1.0') + '"/>' +
+                    '<label>y:</label>' +
+                    '<input type="text" id="' + id + '_jGraduate_y2" size="3" title="' + tt('Enter ending y value between 0.0 and 1.0') + '"/>' +
                   '</div>' +
                 '</div>' +
               '</div>' +
               '<div class="jGraduate_Form jGraduate_Points jGraduate_rg_field">' +
           '<div class="jGraduate_StopSection">' +
-            '<label class="jGraduate_Form_Heading">Center Point</label>' +
+            '<label class="jGraduate_Form_Heading">' + tt('Center Point') + '</label>' +
             '<div class="jGraduate_Form_Section">' +
               '<label>x:</label>' +
-              '<input type="text" id="' + id + '_jGraduate_cx" size="3" title="Enter x value between 0.0 and 1.0"/>' +
-              '<label> y:</label>' +
-              '<input type="text" id="' + id + '_jGraduate_cy" size="3" title="Enter y value between 0.0 and 1.0"/>' +
+              '<input type="text" id="' + id + '_jGraduate_cx" size="3" title="' + tt('Enter x value between 0.0 and 1.0') + '"/>' +
+              '<label>y:</label>' +
+              '<input type="text" id="' + id + '_jGraduate_cy" size="3" title="' + tt('Enter y value between 0.0 and 1.0') + '"/>' +
             '</div>' +
           '</div>' +
           '<div class="jGraduate_StopSection">' +
-            '<label class="jGraduate_Form_Heading">Focal Point</label>' +
+            '<label class="jGraduate_Form_Heading">' + tt('Focal Point') + '</label>' +
             '<div class="jGraduate_Form_Section">' +
-              '<label>Match center: <input type="checkbox" checked="checked" id="' + id + '_jGraduate_match_ctr"/></label><br/>' +
+              '<label>' + tt('Match center:') + '<input type="checkbox" checked="checked" id="' + id + '_jGraduate_match_ctr"/></label><br/>' +
               '<label>x:</label>' +
-              '<input type="text" id="' + id + '_jGraduate_fx" size="3" title="Enter x value between 0.0 and 1.0"/>' +
-              '<label> y:</label>' +
-              '<input type="text" id="' + id + '_jGraduate_fy" size="3" title="Enter y value between 0.0 and 1.0"/>' +
+              '<input type="text" id="' + id + '_jGraduate_fx" size="3" title="' + tt('Enter x value between 0.0 and 1.0') + '"/>' +
+              '<label>y:</label>' +
+              '<input type="text" id="' + id + '_jGraduate_fy" size="3" title="' + tt('Enter y value between 0.0 and 1.0') + '"/>' +
             '</div>' +
           '</div>' +
               '</div>' +
         '<div class="jGraduate_StopSection jGraduate_SpreadMethod">' +
-          '<label class="jGraduate_Form_Heading">Spread method</label>' +
+          '<label class="jGraduate_Form_Heading">' + tt('Spread method') + '</label>' +
           '<div class="jGraduate_Form_Section">' +
             '<select class="jGraduate_spreadMethod">' +
-              '<option value=pad selected>Pad</option>' +
-              '<option value=reflect>Reflect</option>' +
-              '<option value=repeat>Repeat</option>' +
+              '<option value=pad selected>' + tt('Pad') + '</option>' +
+              '<option value=reflect>' + tt('Reflect') + '</option>' +
+              '<option value=repeat>' + tt('Repeat') + '</option>' +
             '</select>' + 
           '</div>' +
         '</div>' +
               '<div class="jGraduate_Form">' +
                 '<div class="jGraduate_Slider jGraduate_RadiusField jGraduate_rg_field">' +
-            '<label class="prelabel">Radius:</label>' +
-            '<div id="' + id + '_jGraduate_Radius" class="jGraduate_SliderBar jGraduate_Radius" title="Click to set radius">' +
+            '<label class="prelabel">' + tt('Radius:') + '</label>' +
+            '<div id="' + id + '_jGraduate_Radius" class="jGraduate_SliderBar jGraduate_Radius" title="' + tt('Click to set radius') + '">' +
               '<img id="' + id + '_jGraduate_RadiusArrows" class="jGraduate_RadiusArrows" src="' + $settings.images.clientPath + 'rangearrows2.gif">' +
             '</div>' +
             '<label><input type="text" id="' + id + '_jGraduate_RadiusInput" size="3" value="100"/><span>&nbsp;%</span></label>' +
                 '</div>' +
                 '<div class="jGraduate_Slider jGraduate_EllipField jGraduate_rg_field">' +
-            '<label class="prelabel">Ellip:</label>' +
-            '<div id="' + id + '_jGraduate_Ellip" class="jGraduate_SliderBar jGraduate_Ellip" title="Click to set Ellip">' +
+            '<label class="prelabel">' + tt('Ellip:') + '</label>' +
+            '<div id="' + id + '_jGraduate_Ellip" class="jGraduate_SliderBar jGraduate_Ellip" title="' + tt('Click to set Ellip') + '">' +
               '<img id="' + id + '_jGraduate_EllipArrows" class="jGraduate_EllipArrows" src="' + $settings.images.clientPath + 'rangearrows2.gif">' +
             '</div>' +
             '<label><input type="text" id="' + id + '_jGraduate_EllipInput" size="3" value="0"/><span>&nbsp;%</span></label>' +
                 '</div>' +
                 '<div class="jGraduate_Slider jGraduate_AngleField jGraduate_rg_field">' +
-            '<label class="prelabel">Angle:</label>' +
-            '<div id="' + id + '_jGraduate_Angle" class="jGraduate_SliderBar jGraduate_Angle" title="Click to set Angle">' +
+            '<label class="prelabel">' + tt('Angle:') + '</label>' +
+            '<div id="' + id + '_jGraduate_Angle" class="jGraduate_SliderBar jGraduate_Angle" title="' + tt('Click to set Angle') + '">' +
               '<img id="' + id + '_jGraduate_AngleArrows" class="jGraduate_AngleArrows" src="' + $settings.images.clientPath + 'rangearrows2.gif">' +
             '</div>' +
             '<label><input type="text" id="' + id + '_jGraduate_AngleInput" size="3" value="0"/><span>&nbsp;º</span></label>' +
                 '</div>' +
                 '<div class="jGraduate_Slider jGraduate_OpacField">' +
-            '<label class="prelabel">Opac:</label>' +
-            '<div id="' + id + '_jGraduate_Opac" class="jGraduate_SliderBar jGraduate_Opac" title="Click to set Opac">' +
+            '<label class="prelabel">' + tt('Opac:') + '</label>' +
+            '<div id="' + id + '_jGraduate_Opac" class="jGraduate_SliderBar jGraduate_Opac" title="' + tt('Click to set Opac') + '">' +
               '<img id="' + id + '_jGraduate_OpacArrows" class="jGraduate_OpacArrows" src="' + $settings.images.clientPath + 'rangearrows2.gif">' +
             '</div>' +
             '<label><input type="text" id="' + id + '_jGraduate_OpacInput" size="3" value="100"/><span>&nbsp;%</span></label>' +
                 '</div>' +
               '</div>' +
               '<div class="jGraduate_OkCancel">' +
-                '<input type="button" id="' + id + '_jGraduate_Ok" class="jGraduate_Ok" value="OK"/>' +
-                '<input type="button" id="' + id + '_jGraduate_Cancel" class="jGraduate_Cancel" value="Cancel"/>' +
+                '<input type="button" id="' + id + '_jGraduate_Ok" class="jGraduate_Ok" value="' + tt('OK') + '"/>' +
+                '<input type="button" id="' + id + '_jGraduate_Cancel" class="jGraduate_Cancel" value="' + tt('Cancel') + '"/>' +
               '</div>');
               
       // --------------
@@ -433,7 +433,7 @@ jQuery.fn.jGraduate =
       // stop visuals created here
       var beginCoord = $('<div/>').attr({
         'class': 'grad_coord jGraduate_lg_field',
-        title: 'Begin Stop'
+        title: tt('Begin Stop')
       }).text(1).css({
         top: y1 * MAX,
         left: x1 * MAX
@@ -442,11 +442,11 @@ jQuery.fn.jGraduate =
       var endCoord = beginCoord.clone().text(2).css({
         top: y2 * MAX,
         left: x2 * MAX
-      }).attr('title', 'End stop').data('coord', 'end').appendTo(container);
+      }).attr('title', tt('End stop')).data('coord', 'end').appendTo(container);
     
       var centerCoord = $('<div/>').attr({
         'class': 'grad_coord jGraduate_rg_field',
-        title: 'Center stop'
+        title: tt('Center stop')
       }).text('C').css({
         top: cy * MAX,
         left: cx * MAX
@@ -456,7 +456,7 @@ jQuery.fn.jGraduate =
         top: fy * MAX,
         left: fx * MAX,
         display: 'none'
-      }).attr('title', 'Focus point').data('coord', 'focus').appendTo(container);
+      }).attr('title', tt('Focus point')).data('coord', 'focus').appendTo(container);
       
       focusCoord[0].id = id + '_jGraduate_focusCoord';
       
@@ -552,7 +552,7 @@ jQuery.fn.jGraduate =
           while (thisAlpha.length < 2) { thisAlpha = "0" + thisAlpha; }
           color = stopColor.substr(1) + thisAlpha;
           $('#'+id+'_jGraduate_stopPicker').css({'left': 100, 'bottom': 15}).jPicker({
-              window: { title: "Pick the start color and opacity for the gradient" },
+              window: { title: tt('Pick the start color and opacity for the gradient') },
               images: { clientPath: $settings.images.clientPath },
               color: { active: color, alphaSupport: true }
             }, function(color, arg2){

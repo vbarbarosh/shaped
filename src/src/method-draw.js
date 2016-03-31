@@ -1393,7 +1393,7 @@
             $('#path_node_y').val(Math.round(point.y));
             if(point.type) {
               seg_type.val(point.type).removeAttr('disabled');
-              $("#seg_type_label").html(point.type == 4 ? "Straight" : "Curve")
+              $("#seg_type_label").html(point.type == 4 ? tt('Straight') : tt('Curve'))
             } else {
               seg_type.val(4).attr('disabled','disabled');
             }
@@ -2807,7 +2807,7 @@
 //        var opacity = (picker == 'stroke' ? $('#stroke_opacity') : $('#fill_opacity'));
         var paint = Editor.paintBox[picker].paint;
         
-        var title = (picker == 'stroke' ? 'Pick a Stroke Paint and Opacity' : 'Pick a Fill Paint and Opacity');
+        var title = (picker == 'stroke' ? tt('Pick a Stroke Paint and Opacity') : tt('Pick a Fill Paint and Opacity'));
         var was_none = false;
         var pos = is_background ? {'right': 175, 'top': 50} : {'left': 50, 'bottom': 50}
         
@@ -3149,7 +3149,7 @@
         var w = $('#canvas_width')[0];
         var h = $('#canvas_height')[0];
         if(!this.selectedIndex) {
-          $('#resolution_label').html("Custom");
+          $('#resolution_label').html(tt('Custom'));
           w.removeAttribute("readonly");
           w.focus();
           w.select();
