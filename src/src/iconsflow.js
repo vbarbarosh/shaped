@@ -67,7 +67,7 @@ jQuery(function () {
                 }
             },
             refreshPageSize: function () {
-                var pageSize = Math.floor(preview.height() / (preview.width() / 3))*3;
+                var pageSize = Math.max(1, Math.floor(preview.height() / (preview.width() / 3))) * 3;
                 if (this.pageSize != pageSize) {
                     this.pageSize = pageSize;
                     this.page = 1;

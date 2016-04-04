@@ -82,6 +82,9 @@
     padding-top: 56.25%;
 }
 
+.bbox {
+    box-sizing: border-box;
+}
 
 .c {
     text-align: center;
@@ -163,6 +166,10 @@
     padding: 0;
 }
 
+.p3 {
+    padding: 3px;
+}
+
 .p5 {
     padding: 5px;
 }
@@ -204,8 +211,12 @@
     width: 50px;
 }
 
-.w175 {
-    width: 175px;
+.w176 {
+    width: 176px;
+}
+
+.min-w30p {
+    min-width: 30%;
 }
 
 .black15 {
@@ -254,6 +265,10 @@
 
 .border10-transparent {
     border: 10px solid transparent;
+}
+
+.m3 {
+    margin: 3px;
 }
 
 .m5 {

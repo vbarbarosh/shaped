@@ -170,7 +170,7 @@ div#workarea {
 /* Layout */
 
 #menu_bar > :first-child {
-    width: 175px;
+    width: 176px;
 }
 
 .menu_title {
@@ -179,7 +179,7 @@ div#workarea {
 
 #tools_left {
     top: 36px;
-    left: 175px;
+    left: 176px;
     width: auto;
     height: 36px;
     z-index: 0;
@@ -256,27 +256,27 @@ div#workarea {
 
 #rulers #ruler_corner {
     top: 72px;
-    left: 175px;
+    left: 176px;
 }
 
 #ruler_x {
     top: 72px;
-    left: 175px;
+    left: 176px;
 }
 
 #ruler_y {
     top: 72px;
-    left: 175px;
+    left: 176px;
 }
 
 div#workarea {
     top: 72px;
-    left: 175px;
+    left: 176px;
 }
 
 #tools_bottom {
-    left: 175px;
-    right: 175px;
+    left: 176px;
+    right: 176px;
 }
 
 #tools_top {
