@@ -320,6 +320,26 @@ div#workarea {
     color: white;
 }
 
+#path_node_panel .tool_button {
+    border: 2px solid white;
+    border-radius: 999px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-align: left;
+    padding-left: 45px;
+    width: 90px;
+    white-space: nowrap;
+}
+
+#path_node_panel svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    padding-top: 2px;
+    padding-left: 11px;
+}
+
 
 
 
