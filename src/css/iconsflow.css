@@ -114,9 +114,9 @@ div#workarea {
     border: none;
     background: rgba(255, 255, 255, 0.2);
     outline: none;
-    padding: 10px;
-    width: 28px;
-    height: 28px;
+    padding: 15px;
+    width: 18px;
+    height: 18px;
 }
 
 .draginput_cell svg {
