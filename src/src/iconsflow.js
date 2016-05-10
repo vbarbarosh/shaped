@@ -33,7 +33,7 @@ jQuery(function () {
     new Vue({
         el: '#gallery',
         data: {
-            term: tt('animals'),
+            term: tt('outlined'),
             searching: false,
             page: 1,
             pageSize: 1,
