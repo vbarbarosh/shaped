@@ -11,10 +11,7 @@ jQuery(function () {
         }
 
         ajax = jQuery.ajax(methodDraw.curConfig.searchUrl, {data: {lang: tt.lang, term: term, page: page, limit: pageSize}});
-        return Promise.resolve(ajax)
-            .then(function (searchResponse) {
-                return [searchResponse.rows, searchResponse.data];
-            });
+        return Promise.resolve(ajax);
     }
 
     Vue.filter('svgdef', function (def) {
@@ -41,14 +38,14 @@ jQuery(function () {
             page: 1,
             pageSize: 1,
             found: 1,
-            defs: []
+            icons: []
         },
         methods: {
             tt: window.tt,
-            insertIconIntoCanvas: function (svg) {
+            insertIconIntoCanvas: function (svgdef) {
                 var tmp = svgCanvas.getSvgString().split(/\s*<\/g>\s*<\/svg>\s*$/);
                 if (tmp.length == 2) {
-                    tmp[0] += svg;
+                    tmp[0] += svgdef;
                     svgCanvas.setSvgString(tmp.join('</g></svg>'));
                 }
             },
@@ -86,9 +83,9 @@ jQuery(function () {
                 var _this = this;
                 this.searching += 1;
                 search(this.term, this.page, this.pageSize)
-                    .spread(function (found, fetched) {
-                        _this.found = found;
-                        _this.defs = fetched;
+                    .then(function (response) {
+                        _this.found = response.rows;
+                        _this.icons = response.data;
                     })
                     // catch -> caught: because of js compiler in Makefile
                     .caught(function (error) {
