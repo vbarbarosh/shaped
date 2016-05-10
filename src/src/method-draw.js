@@ -39,9 +39,8 @@
     var Editor = {};
     var is_ready = false;
     curConfig = {
-      searchUrl: urlParams['s'] || '//search.iconsflow.com/search',
-      fetchUrl: urlParams['f'] || '//localhost/iconmaker/src/backend/fetch-iconsflow.php',
-      canvas_expansion: 1, 
+      searchUrl: urlParams['s'] || 'https://iconsflow.com/search',
+      canvas_expansion: 1,
       dimensions: [580,400], 
       initFill: {color: '9acee6', opacity: 1},
       initStroke: {width: 1.5, color: 'none', opacity: 1},

@@ -1,10 +1,6 @@
 jQuery(function () {
 
     var ajax = null,
-        cache = {
-            search: {},
-            fetch: {}
-        },
         preview = jQuery('#gallery > div:nth-child(2)');
 
     function search(term, page, pageSize)
@@ -14,20 +10,10 @@ jQuery(function () {
             ajax = null;
         }
 
-        return Promise.resolve(cache.search[term] ? cache.search[term] : ajax = jQuery.ajax(methodDraw.curConfig.searchUrl, {data: {lang: tt.lang, term: term}}))
+        ajax = jQuery.ajax(methodDraw.curConfig.searchUrl, {data: {lang: tt.lang, term: term, page: page, limit: pageSize}});
+        return Promise.resolve(ajax)
             .then(function (searchResponse) {
-                var offset = (page - 1) * pageSize;
-                cache.search[term] = searchResponse;
-                ajax = jQuery.ajax(methodDraw.curConfig.fetchUrl, {data: {icons: searchResponse.icons.slice(offset, offset + pageSize)}});
-                return [searchResponse.icons.length, Promise.resolve(ajax)];
-            })
-            .spread(function (found, fetchResponse) {
-                var key, fetched = [];
-                for (key in fetchResponse) {
-                    fetched.push(fetchResponse[key].defs[0]);
-                    // fetched.push('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">' + fetchResponse[key].defs[0] + '</svg>');
-                }
-                return [found, fetched];
+                return [searchResponse.rows, searchResponse.data];
             });
     }
 
