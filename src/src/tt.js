@@ -114,6 +114,7 @@
         'Change text x coordinate': 'Изменить текст х координат',
         'Change text y coordinate': 'Изменить текст координату',
         'Font': 'Шрифт',
+        'Letter [F]': 'Буква [F]',
         'Change Font Family': 'Изменение Семейство шрифтов',
         'Arvo': 'Арво',
         'Courier': 'курьер',

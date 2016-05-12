@@ -225,6 +225,7 @@
           '#tool_text,#layer_rename':'text',
           '#tool_image':'image',
           '#tool_zoom':'zoom',
+          '#tool_font_letter':'font_letter',
           '#tool_node_clone':'node_clone',
           '#tool_node_delete':'node_delete',
           '#tool_add_subpath':'add_subpath',
@@ -2139,7 +2140,16 @@
           svgCanvas.setMode('zoom');
         }
       };
-    
+
+      var fontLetter = function () {
+        if (toolButtonClick('#tool_font_letter')) {
+          alert(1);
+        }
+        else {
+          alert(2);
+        }
+      };
+
       var dblclickZoom = function(){
         if (toolButtonClick('#tool_zoom')) {
           zoomImage();
@@ -3217,6 +3227,7 @@
           {sel:'#tool_text', fn: clickText, evt: 'click', key: ['T', true]},
           {sel:'#tool_image', fn: clickImage, evt: 'mouseup'},
           {sel:'#tool_zoom', fn: clickZoom, evt: 'mouseup', key: ['Z', true]},
+          {sel:'#tool_font_letter', fn: fontLetter, evt: 'mouseup', key: ['F', true]},
           {sel:'#tool_clear', fn: clickClear, evt: 'mouseup', key: [modKey + 'N', true]},
           {sel:'#tool_save', fn: function() { editingsource ? saveSourceEditor(): clickSave() }, evt: 'mouseup', key: [modKey + 'S', true]},
           {sel:'#tool_export', fn: clickExport, evt: 'mouseup'},
