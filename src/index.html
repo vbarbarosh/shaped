@@ -119,7 +119,7 @@
       <img src="iconsflow/icon-x.svg" alt="Close" class="db fit" />
     </a>
     <span class="z1n abs fit30 t15n r15n br100p bs10"></span>
-    <div class="white bs10 br5 p5 pb10">
+    <div class="white bs10 br5 p5 pb15">
       <h2 class="c fs16 xfw xm pt10">{{ tt('Choose a font:') }}</h2>
       <div v-for="row in chunk(fonts, 4)" class="flex-rows">
         <a v-for="font in row" v-on:click.prevent="search(font.term), hideFontDialog()" href="#" class="rel pv15 ph20">
