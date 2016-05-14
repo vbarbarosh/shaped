@@ -2143,10 +2143,7 @@
 
       var fontLetter = function () {
         if (toolButtonClick('#tool_font_letter')) {
-          alert(1);
-        }
-        else {
-          alert(2);
+          jQuery('#iconsflow-dialog-font').show();
         }
       };
 

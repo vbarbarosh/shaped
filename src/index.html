@@ -71,43 +71,67 @@
 </head>
 <body>
 
-<div id="gallery" class="flex-cols abs-box w176 p3 border-box mg5" style="display: none; top: 36px;" v-show="true">
-  <div class="rel ph5">
-    <input v-on:keyup.enter="searchTerm" v-model="term" class="input pr28" type="text" placeholder="{{ tt('Search cliparts...') }}" />
-    <a v-on:click="search" class="box16 abs" style="top: 5px; right: 15px;" href="#">
-      <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-        <path d="M12.65 11.6q1.6-1.9 1.6-4.45 0-2.95-2.1-5.05Q10.05 0 7.1 0q-2.95 0-5 2.1Q0 4.2 0 7.15q0 2.95 2.1 5 2.05 2.1 5 2.1 2.6 0 4.55-1.65l5.1 5.1q.6.6 1.05.05.45-.5-.05-1.05l-5.1-5.1m-1.5-8.5q1.7 1.65 1.7 4.05 0 2.35-1.7 4.05-1.7 1.65-4.05 1.65-2.35 0-4-1.65-1.7-1.7-1.7-4.05 0-2.4 1.7-4.05 1.65-1.7 4-1.7t4.05 1.7z"></path>
-      </svg>
-    </a>
-  </div>
-  <div class="flex-grow rel">
-    <div class="abs-box flex-rows-center z1 no-pointer-events" v-bind:class="{o100: searching, o0: !searching, 'transition-opacity-1000ms': searching, 'transition-opacity-250ms': !searching}">
-      <div class="spinner">
-        <div class="dot1 bs10"></div>
-        <div class="dot2 bs10"></div>
-      </div>
+<div v-show="true" style="display: none;" id="iconsflow">
+
+  <!-- search box -->
+  <div class="flex-cols abs-box w176 p3 border-box mg5" style="top: 36px;">
+    <div class="rel ph5">
+      <input v-on:keyup.enter="searchTerm" v-model="term" class="input pr28" type="text" placeholder="{{ tt('Search cliparts...') }}" />
+      <a v-on:click="search" class="box16 abs" style="top: 5px; right: 15px;" href="#">
+        <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+          <path d="M12.65 11.6q1.6-1.9 1.6-4.45 0-2.95-2.1-5.05Q10.05 0 7.1 0q-2.95 0-5 2.1Q0 4.2 0 7.15q0 2.95 2.1 5 2.05 2.1 5 2.1 2.6 0 4.55-1.65l5.1 5.1q.6.6 1.05.05.45-.5-.05-1.05l-5.1-5.1m-1.5-8.5q1.7 1.65 1.7 4.05 0 2.35-1.7 4.05-1.7 1.65-4.05 1.65-2.35 0-4-1.65-1.7-1.7-1.7-4.05 0-2.4 1.7-4.05 1.65-1.7 4-1.7t4.05 1.7z"></path>
+        </svg>
+      </a>
     </div>
-    <ul class="list-reset flex-rows flex-wrap" v-bind:class="{o100: !searching, o50: searching, 'transition-opacity-1000ms': searching, 'transition-opacity-250ms': !searching}">
-      <li v-for="icon in icons" class="w50 m3">
-        <a v-on:click="insertIconIntoCanvas(icon.defs[0])" href="#" class="expand-1-1 white br5">
-          <img v-bind:src="icon.defs[0] | svgdef" class="abs-box-image p5" alt="" />
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="mig5 c">
-    <a v-on:click="prev" class="button" href="#">
-      <svg class="box p5 rel" style="right: 1px" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67 100">
-        <path d="M67 8.5q.2-3.35-2-5.85Q62.75.2 59.45 0q-3.3-.2-5.8 2L0 50l53.65 48q2.45 2.2 5.8 2 3.3-.15 5.55-2.65 2.2-2.45 2-5.8-.2-3.3-2.65-5.5L24.1 50l40.25-35.95q2.5-2.2 2.65-5.55z"></path>
-      </svg>
-    </a><!--
+    <div class="flex-grow rel">
+      <div class="abs-box flex-rows-center z1 no-pointer-events" v-bind:class="{o100: searching, o0: !searching, 'transition-opacity-1000ms': searching, 'transition-opacity-250ms': !searching}">
+        <div class="spinner">
+          <div class="dot1 bs10"></div>
+          <div class="dot2 bs10"></div>
+        </div>
+      </div>
+      <ul class="list-reset flex-rows flex-wrap" v-bind:class="{o100: !searching, o50: searching, 'transition-opacity-1000ms': searching, 'transition-opacity-250ms': !searching}">
+        <li v-for="icon in icons" class="w50 m3">
+          <a v-on:click="insertIconIntoCanvas(icon.defs[0])" href="#" class="expand-1-1 white br5">
+            <img v-bind:src="icon.defs[0] | svgdef" class="abs-box-image p5" alt="" />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="mig5 c">
+      <a v-on:click="prev" class="button" href="#">
+        <svg class="box p5 rel" style="right: 1px" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67 100">
+          <path d="M67 8.5q.2-3.35-2-5.85Q62.75.2 59.45 0q-3.3-.2-5.8 2L0 50l53.65 48q2.45 2.2 5.8 2 3.3-.15 5.55-2.65 2.2-2.45 2-5.8-.2-3.3-2.65-5.5L24.1 50l40.25-35.95q2.5-2.2 2.65-5.55z"></path>
+        </svg>
+      </a><!--
  --><input v-on:keyup.enter="searchPage" v-model="page" class="input w50" type="text" /><!--
  --><a v-on:click="next" class="button" href="#">
-    <svg class="box p5 rel" style="left: 1px" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67 100">
-      <path d="M0 8.5q.15 3.35 2.65 5.55L42.9 50 2.65 86.05Q.2 88.25 0 91.55q-.2 3.35 2 5.8 2.25 2.5 5.55 2.65 3.35.2 5.8-2L67 50 13.35 2q-2.5-2.2-5.8-2Q4.25.2 2 2.65-.2 5.15 0 8.5z"></path>
-    </svg>
-  </a>
+      <svg class="box p5 rel" style="left: 1px" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67 100">
+        <path d="M0 8.5q.15 3.35 2.65 5.55L42.9 50 2.65 86.05Q.2 88.25 0 91.55q-.2 3.35 2 5.8 2.25 2.5 5.55 2.65 3.35.2 5.8-2L67 50 13.35 2q-2.5-2.2-5.8-2Q4.25.2 2 2.65-.2 5.15 0 8.5z"></path>
+      </svg>
+    </a>
+    </div>
   </div>
+
+  <!-- font dialog -->
+  <div id="iconsflow-dialog-font" class="abs z1" style="top: 70px; left: 330px;">
+    <a v-on:click.prevent="hideFontDialog" href="#" class="abs fit30 t15n r15n">
+      <img src="iconsflow/icon-x.svg" alt="Close" class="db fit" />
+    </a>
+    <span class="z1n abs fit30 t15n r15n br100p bs10"></span>
+    <div class="white bs10 br5 p5 pb10">
+      <h2 class="c fs16 xfw xm pt10">{{ tt('Choose a font:') }}</h2>
+      <div v-for="row in chunk(fonts, 4)" class="flex-rows">
+        <a v-for="font in row" v-on:click.prevent="search(font.term), hideFontDialog()" href="#" class="rel pv15 ph20">
+          <img v-bind:src="font.img" alt="" class="fit50 db" />
+          <span class="abs l0 r0 c color-black">
+            {{ font.title }}
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div id="svg_editor">

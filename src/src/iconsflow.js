@@ -1,7 +1,13 @@
 jQuery(function () {
 
     var ajax = null,
-        preview = jQuery('#gallery > div:nth-child(2)');
+        preview = jQuery('#iconsflow > div > div:nth-child(2)');
+
+    function hideFontDialog()
+    {
+        jQuery('#tool_select').click();
+        jQuery('#iconsflow-dialog-font').hide();
+    }
 
     function search(term, page, pageSize)
     {
@@ -12,6 +18,15 @@ jQuery(function () {
 
         ajax = jQuery.ajax(methodDraw.curConfig.searchUrl, {data: {lang: tt.lang, term: term, page: page, limit: pageSize}});
         return Promise.resolve(ajax);
+    }
+
+    function chunk(array, chunkSize)
+    {
+        var i, end, ret = [];
+        for (i = 0, end = array.length; i < end; i += chunkSize) {
+            ret.push(array.slice(i, i + chunkSize));
+        }
+        return ret;
     }
 
     Vue.filter('svgdef', function (def) {
@@ -31,17 +46,80 @@ jQuery(function () {
     });
 
     new Vue({
-        el: '#gallery',
+        el: '#iconsflow',
         data: {
             term: tt('outlined'),
             searching: false,
             page: 1,
             pageSize: 1,
             found: 1,
-            icons: []
+            icons: [],
+            fonts: [
+                {
+                    img: 'iconsflow/font-dialog/font-preview-opensans.png',
+                    term: 'opensans',
+                    title: 'Open Sans'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-noteworthy.png',
+                    term: 'noteworthy',
+                    title: 'Noteworthy'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-roboto.png',
+                    term: 'roboto',
+                    title: 'Roboto'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-raleway.png',
+                    term: 'raleway',
+                    title: 'Raleway'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-orbitron.png',
+                    term: 'orbitron',
+                    title: 'Orbitron'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-slurry.png',
+                    term: 'slurry',
+                    title: 'Slurry'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-fjallaone.png',
+                    term: 'fjallaone',
+                    title: 'Fjalla One'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-pinyonscript.png',
+                    term: 'pinyonscript',
+                    title: 'Pinyon Script'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-kaushanscript.png',
+                    term: 'kaushanscript',
+                    title: 'Kaushan Script'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-lekton.png',
+                    term: 'lekton',
+                    title: 'Lekton'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-montez.png',
+                    term: 'montez',
+                    title: 'Montez'
+                },
+                {
+                    img: 'iconsflow/font-dialog/font-preview-monoton.png',
+                    term: 'monoton',
+                    title: 'Monoton'
+                }
+            ]
         },
         methods: {
             tt: window.tt,
+            chunk: chunk,
             insertIconIntoCanvas: function (svgdef) {
                 var tmp = svgCanvas.getSvgString().split(/\s*<\/g>\s*<\/svg>\s*$/);
                 if (tmp.length == 2) {
@@ -79,8 +157,11 @@ jQuery(function () {
                 this.page = Math.max(1, Math.min(Math.ceil(this.found/this.pageSize), this.page));
                 this.search();
             },
-            search: function (page) {
+            search: function (term) {
                 var _this = this;
+                if (typeof term !== 'undefined') {
+                    this.term = term;
+                }
                 this.searching += 1;
                 search(this.term, this.page, this.pageSize)
                     .then(function (response) {
@@ -98,7 +179,8 @@ jQuery(function () {
                     .lastly(function () {
                         _this.searching -= 1;
                     });
-            }
+            },
+            hideFontDialog: hideFontDialog
         },
         ready: function () {
             this.refreshPageSize();
