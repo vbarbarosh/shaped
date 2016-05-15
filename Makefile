@@ -80,7 +80,8 @@ build:
 	rm $(STATIC_PATH)/css/sm.css
 	rm $(STATIC_PATH)/css/iconsflow.css
 	rm $(STATIC_PATH)/css/method-draw.css
-	rm -r $(STATIC_PATH)/src
+	# Are necessary for embedapi.js
+	# rm -r $(STATIC_PATH)/src
 
 	# Remove all hidden .svn directories
 	-find build/ -name .svn -type d | xargs rm -rf {} \;
@@ -92,6 +93,9 @@ build:
 	    COMPILED_JS=$(COMPILED_JS_RELATIVE) \
 	    COMPILED_CSS=$(COMPILED_CSS_RELATIVE) \
 	    php src/index.php > build/index.html
+
+	sed 's:koo5ahgiechokie4Ohga:$(STATIC_DIR):' src/embedapi.php > build/embedapi.php
+
 	# $(SHIP) --i=src/index.html --on=svg_edit_release > build/index.html
 	# sed -i 's:static/css/method-draw.compiled.css:&?v$(VERSION):' build/index.html
 	# sed -i 's:static/method-draw.compiled.js:&?v$(VERSION):' build/index.html
