@@ -292,7 +292,9 @@ div#workarea {
 }
 
 #cur_context_panel {
-    left: 242px;
+    top: 75px;
+    left: 176px;
+    opacity: 1;
 }
 
 #zoom {
