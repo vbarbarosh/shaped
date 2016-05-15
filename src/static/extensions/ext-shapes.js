@@ -85,7 +85,7 @@ methodDraw.addExtension("shapes", function() {
     
     if(!lib) {
       $('#shape_buttons').html('Loading...');
-      $.getJSON('extensions/shapelib/' + cat_id + '.json', function(result, textStatus) {
+      $.getJSON(static_path('extensions/shapelib/' + cat_id + '.json'), function(result, textStatus) {
         cur_lib = library[cat_id] = {
           data: result.data,
           size: result.size,
@@ -142,13 +142,13 @@ methodDraw.addExtension("shapes", function() {
 
   
   return {
-    svgicons: "extensions/ext-shapes.xml",
+    svgicons: static_path('extensions/ext-shapes.xml'),
     buttons: [{
       id: "tool_shapelib",
       type: "mode_flyout", // _flyout
       position: 6,
       title: "Shape library",
-      icon: "extensions/ext-shapes.png",
+      icon: static_path('extensions/ext-shapes.png'),
       events: {
         "click": function() {
           canv.setMode(mode_id);

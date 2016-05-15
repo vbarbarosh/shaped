@@ -1,71 +1,92 @@
+<?php
+
+$static = getenv('STATIC');
+if (empty($static)) {
+  $static = 'static';
+}
+$compiled_css = getenv('COMPILED_CSS');
+$compiled_js = getenv('COMPILED_JS');
+
+function e()
+{
+  echo implode('', array_filter(func_get_args(), 'htmlentities'));
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
-<link rel="icon" type="image/png" href="images/logo.png"/>
+<link rel="icon" type="image/png" href="<?php e("$static/images/logo.png") ?>"/>
 
-<!--{if svg_edit_release}>
-  <link rel="stylesheet" href="css/method-draw.compiled.css" type="text/css"/>
-<!{else}-->
-  <link rel="stylesheet" href="lib/jgraduate/css/jPicker.css" type="text/css"/>
-  <link rel="stylesheet" href="lib/jgraduate/css/jgraduate.css" type="text/css"/>
-  <link rel="stylesheet" href="lib/jgraduate/css/iconsflow.css" type="text/css"/>
-  <link rel="stylesheet" href="css/method-draw.css" type="text/css"/>
-  <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
-  <link rel="stylesheet" href="css/iconsflow.css" type="text/css"/>
-  <link rel="stylesheet" href="css/grid.css" type="text/css"/>
-  <link rel="stylesheet" href="css/spinner.css" type="text/css"/>
-  <link rel="stylesheet" href="css/sm.css" type="text/css"/>
-<!--{endif}-->
+  <script type="text/javascript">
+    function static_path(path) {
+      return <?php echo json_encode("$static/") ?> + path;
+    }
+  </script>
+
+<?php if ($compiled_css): ?>
+  <link rel="stylesheet" href="<?php e($compiled_css) ?>" type="text/css"/>
+<?php else: ?>
+  <link rel="stylesheet" href="<?php e("$static/lib/jgraduate/css/jPicker.css") ?>" type="text/css"/>
+  <link rel="stylesheet" href="<?php e("$static/lib/jgraduate/css/jgraduate.css") ?>" type="text/css"/>
+  <link rel="stylesheet" href="<?php e("$static/lib/jgraduate/css/iconsflow.css") ?>" type="text/css"/>
+  <link rel="stylesheet" href="<?php e("$static/css/method-draw.css") ?>" type="text/css"/>
+  <link rel="stylesheet" href="<?php e("$static/css/fonts.css") ?>" type="text/css"/>
+  <link rel="stylesheet" href="<?php e("$static/css/iconsflow.css") ?>" type="text/css"/>
+  <link rel="stylesheet" href="<?php e("$static/css/grid.css") ?>" type="text/css"/>
+  <link rel="stylesheet" href="<?php e("$static/css/spinner.css") ?>" type="text/css"/>
+  <link rel="stylesheet" href="<?php e("$static/css/sm.css") ?>" type="text/css"/>
+<?php endif ?>
+
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
 
-  <script type="text/javascript" src="lib/jquery.js"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/jquery.js") ?>"></script>
   <script src="//cdn.jsdelivr.net/bluebird/3.3.4/bluebird.min.js" type="text/javascript"></script>
-<!--
   <script src="//cdn.jsdelivr.net/vue/1.0.17/vue.min.js" type="text/javascript"></script>
--->
+<!--
   <script src="//vuejs.org/js/vue.js" type="text/javascript"></script>
+-->
 
-<!--{if svg_edit_release}>
-  <script type="text/javascript" src="method-draw.compiled.js"></script>
-<!{else}-->
-  <script type="text/javascript" src="src/tt.js"></script>
-  <script type="text/javascript" src="src/iconsflow.js"></script>
-  <script type="text/javascript" src="lib/pathseg.js"></script>
-  <script type="text/javascript" src="lib/touch.js"></script>
-  <script type="text/javascript" src="lib/js-hotkeys/jquery.hotkeys.min.js"></script>
-  <script type="text/javascript" src="icons/jquery.svgicons.js"></script>
-  <script type="text/javascript" src="lib/jgraduate/jquery.jgraduate.js"></script>
-  <script type="text/javascript" src="lib/contextmenu/jquery.contextMenu.js"></script>
-  <script type="text/javascript" src="lib/jquery-ui/jquery-ui-1.8.17.custom.min.js"></script>
-  <script type="text/javascript" src="src/browser.js"></script>
-  <script type="text/javascript" src="src/svgtransformlist.js"></script>
-  <script type="text/javascript" src="src/math.js"></script>
-  <script type="text/javascript" src="src/units.js"></script>
-  <script type="text/javascript" src="src/svgutils.js"></script>
-  <script type="text/javascript" src="src/sanitize.js"></script>
-  <script type="text/javascript" src="src/history.js"></script>
-  <script type="text/javascript" src="src/select.js"></script>
-  <script type="text/javascript" src="src/draw.js"></script>
-  <script type="text/javascript" src="src/path.js"></script>
-  <script type="text/javascript" src="src/dialog.js"></script>
-  <script type="text/javascript" src="src/svgcanvas.js"></script>
-  <script type="text/javascript" src="src/method-draw.js"></script>
-  <script type="text/javascript" src="lib/jquery-draginput.js"></script>
-  <script type="text/javascript" src="lib/contextmenu.js"></script>
-  <script type="text/javascript" src="lib/jgraduate/jpicker.min.js"></script>
-  <script type="text/javascript" src="lib/mousewheel.js"></script>
-  <script type="text/javascript" src="extensions/ext-eyedropper.js"></script>
-  <script type="text/javascript" src="extensions/ext-shapes.js"></script>
-  <script type="text/javascript" src="extensions/ext-grid.js"></script>
-  <script type="text/javascript" src="lib/requestanimationframe.js"></script>
-  <script type="text/javascript" src="lib/taphold.js"></script>
-  <script type="text/javascript" src="lib/filesaver.js"></script>
-<!--{endif}-->
-
+<?php if ($compiled_js): ?>
+  <script type="text/javascript" src="<?php e($compiled_js) ?>"></script>
+<?php else: ?>
+  <script type="text/javascript" src="<?php e("$static/src/tt.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/iconsflow.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/pathseg.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/touch.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/js-hotkeys/jquery.hotkeys.min.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/icons/jquery.svgicons.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/jgraduate/jquery.jgraduate.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/contextmenu/jquery.contextMenu.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/jquery-ui/jquery-ui-1.8.17.custom.min.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/browser.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/svgtransformlist.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/math.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/units.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/svgutils.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/sanitize.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/history.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/select.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/draw.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/path.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/dialog.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/svgcanvas.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/method-draw.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/jquery-draginput.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/contextmenu.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/jgraduate/jpicker.min.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/mousewheel.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/extensions/ext-eyedropper.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/extensions/ext-shapes.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/extensions/ext-grid.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/requestanimationframe.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/taphold.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/lib/filesaver.js") ?>"></script>
+<?php endif ?>
 
 <title>Method Draw</title>
 </head>
@@ -116,7 +137,7 @@
   <!-- font dialog -->
   <div id="iconsflow-dialog-font" class="abs z1" style="top: 70px; left: 330px; display: none;">
     <a v-on:click.prevent="hideFontDialog" href="#" class="abs fit30 t15n r15n">
-      <img src="iconsflow/icon-x.svg" alt="Close" class="db fit" />
+      <img v-bind:src="static_path('iconsflow/icon-x.svg')" alt="Close" class="db fit" />
     </a>
     <span class="z1n abs fit30 t15n r15n br100p bs10"></span>
     <div class="white bs10 br5 p5 pb15">
@@ -160,7 +181,7 @@
 <div id="menu_bar">
   <div class="menu">
     <div class="menu_title cursor-auto">
-      <img class="abs w35 t2 l7" src="iconsflow/logo.svg" alt="" />
+      <img class="abs w35 t2 l7" src="<?php e("$static/iconsflow/logo.svg") ?>" alt="" />
     </div>
 <!--
     <div class="menu_list">

@@ -9,55 +9,59 @@ YUICOMPRESSOR=bin/vendor/yuicompressor-2.4.7.jar
 # All files that will be compiled by the Closure compiler.
 
 JS_FILES=\
-	src/tt.js \
-	src/iconsflow.js \
-	lib/pathseg.js \
-	lib/touch.js \
-	lib/js-hotkeys/jquery.hotkeys.min.js \
-	icons/jquery.svgicons.js \
-	lib/jgraduate/jquery.jgraduate.js \
-	lib/contextmenu/jquery.contextMenu.js \
-	src/browser.js \
-	src/svgtransformlist.js \
-	src/math.js \
-	src/units.js \
-	src/svgutils.js \
-	src/sanitize.js \
-	src/history.js \
-	src/select.js \
-	src/draw.js \
-	src/path.js \
-	src/svgcanvas.js \
-	src/method-draw.js \
-	lib/jquery-draginput.js \
-	lib/contextmenu.js \
-	lib/jquery-ui/jquery-ui-1.8.17.custom.min.js \
-	lib/jgraduate/jpicker.min.js \
-	lib/mousewheel.js \
-	extensions/ext-eyedropper.js \
-	extensions/ext-grid.js \
-	extensions/ext-shapes.js \
-	lib/requestanimationframe.js \
-	lib/taphold.js \
-	lib/filesaver.js
+	static/src/tt.js \
+	static/src/iconsflow.js \
+	static/lib/pathseg.js \
+	static/lib/touch.js \
+	static/lib/js-hotkeys/jquery.hotkeys.min.js \
+	static/icons/jquery.svgicons.js \
+	static/lib/jgraduate/jquery.jgraduate.js \
+	static/lib/contextmenu/jquery.contextMenu.js \
+	static/src/browser.js \
+	static/src/svgtransformlist.js \
+	static/src/math.js \
+	static/src/units.js \
+	static/src/svgutils.js \
+	static/src/sanitize.js \
+	static/src/history.js \
+	static/src/select.js \
+	static/src/draw.js \
+	static/src/path.js \
+	static/src/svgcanvas.js \
+	static/src/method-draw.js \
+	static/lib/jquery-draginput.js \
+	static/lib/contextmenu.js \
+	static/lib/jquery-ui/jquery-ui-1.8.17.custom.min.js \
+	static/lib/jgraduate/jpicker.min.js \
+	static/lib/mousewheel.js \
+	static/extensions/ext-eyedropper.js \
+	static/extensions/ext-grid.js \
+	static/extensions/ext-shapes.js \
+	static/lib/requestanimationframe.js \
+	static/lib/taphold.js \
+	static/lib/filesaver.js
 
 CSS_FILES=\
-	lib/jgraduate/css/jPicker.css \
-	lib/jgraduate/css/jgraduate.css \
-	lib/jgraduate/css/iconsflow.css \
-	css/method-draw.css \
-	css/iconsflow.css \
-	css/grid.css \
-	css/spinner.css \
-	css/sm.css
+	static/lib/jgraduate/css/jPicker.css \
+	static/lib/jgraduate/css/jgraduate.css \
+	static/lib/jgraduate/css/iconsflow.css \
+	static/css/method-draw.css \
+	static/css/iconsflow.css \
+	static/css/grid.css \
+	static/css/spinner.css \
+	static/css/sm.css
 
 JS_INPUT_FILES=$(addprefix src/, $(JS_FILES))
 CSS_INPUT_FILES=$(addprefix src/, $(CSS_FILES))
 JS_BUILD_FILES=$(addprefix build/, $(JS_FILES))
 CSS_BUILD_FILES=$(addprefix build/, $(CSS_FILES))
 CLOSURE_JS_ARGS=$(addprefix --js , $(JS_INPUT_FILES))
-COMPILED_JS=build/method-draw.compiled.js
-COMPILED_CSS=build/css/method-draw.compiled.css
+STATIC_DIR=static/$(VERSION)
+STATIC_PATH=build/$(STATIC_DIR)
+COMPILED_JS_RELATIVE=$(STATIC_DIR)/method-draw.compiled.js
+COMPILED_CSS_RELATIVE=$(STATIC_DIR)/method-draw.compiled.css
+COMPILED_JS=build/$(COMPILED_JS_RELATIVE)
+COMPILED_CSS=build/$(COMPILED_CSS_RELATIVE)
 
 all: release
 
@@ -71,10 +75,12 @@ build:
 
 	# Make build directory and copy all editor contents into it
 	mkdir -p build
-	cp -r src/* build/
-	rm build/css/sm.css
-	rm build/css/iconsflow.css
-	rm build/css/method-draw.css
+	mkdir -p $(STATIC_PATH)
+	cp -r src/static/* $(STATIC_PATH)
+	rm $(STATIC_PATH)/css/sm.css
+	rm $(STATIC_PATH)/css/iconsflow.css
+	rm $(STATIC_PATH)/css/method-draw.css
+	rm -r $(STATIC_PATH)/src
 
 	# Remove all hidden .svn directories
 	-find build/ -name .svn -type d | xargs rm -rf {} \;
@@ -82,9 +88,13 @@ build:
 	-find build -name __test\* -delete
 
 	# Create the release version of the main HTML file.
-	$(SHIP) --i=src/index.html --on=svg_edit_release > build/index.html
-	sed -i 's:css/method-draw.compiled.css:&?v$(VERSION):' build/index.html
-	sed -i 's:method-draw.compiled.js:&?v$(VERSION):' build/index.html
+	STATIC=$(STATIC_DIR) \
+	    COMPILED_JS=$(COMPILED_JS_RELATIVE) \
+	    COMPILED_CSS=$(COMPILED_CSS_RELATIVE) \
+	    php src/index.php > build/index.html
+	# $(SHIP) --i=src/index.html --on=svg_edit_release > build/index.html
+	# sed -i 's:static/css/method-draw.compiled.css:&?v$(VERSION):' build/index.html
+	# sed -i 's:static/method-draw.compiled.js:&?v$(VERSION):' build/index.html
 
 # NOTE: Some files are not ready for the Closure compiler: (jquery)
 # NOTE: Our code safely compiles under SIMPLE_OPTIMIZATIONS

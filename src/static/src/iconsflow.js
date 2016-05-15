@@ -56,62 +56,62 @@ jQuery(function () {
             icons: [],
             fonts: [
                 {
-                    img: 'iconsflow/font-dialog/font-preview-opensans.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-opensans.png'),
                     term: 'opensans',
                     title: 'Open Sans'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-noteworthy.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-noteworthy.png'),
                     term: 'noteworthy',
                     title: 'Noteworthy'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-roboto.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-roboto.png'),
                     term: 'roboto',
                     title: 'Roboto'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-raleway.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-raleway.png'),
                     term: 'raleway',
                     title: 'Raleway'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-orbitron.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-orbitron.png'),
                     term: 'orbitron',
                     title: 'Orbitron'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-slurry.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-slurry.png'),
                     term: 'slurry',
                     title: 'Slurry'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-fjallaone.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-fjallaone.png'),
                     term: 'fjallaone',
                     title: 'Fjalla One'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-pinyonscript.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-pinyonscript.png'),
                     term: 'pinyonscript',
                     title: 'Pinyon Script'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-kaushanscript.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-kaushanscript.png'),
                     term: 'kaushanscript',
                     title: 'Kaushan Script'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-lekton.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-lekton.png'),
                     term: 'lekton',
                     title: 'Lekton'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-montez.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-montez.png'),
                     term: 'montez',
                     title: 'Montez'
                 },
                 {
-                    img: 'iconsflow/font-dialog/font-preview-monoton.png',
+                    img: static_path('iconsflow/font-dialog/font-preview-monoton.png'),
                     term: 'monoton',
                     title: 'Monoton'
                 }
@@ -120,6 +120,7 @@ jQuery(function () {
         methods: {
             tt: window.tt,
             chunk: chunk,
+            static_path: static_path,
             insertIconIntoCanvas: function (svgdef) {
                 var tmp = svgCanvas.getSvgString().split(/\s*<\/g>\s*<\/svg>\s*$/);
                 if (tmp.length == 2) {
