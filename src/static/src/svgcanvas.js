@@ -5672,7 +5672,7 @@ this.getSvgString = function(param) {
 };
 
 this.getSvgCredits = function () {
-  return ['foo', 'bar', 'baz'];
+  return window._SvgCredits;
 };
 
 // Function: randomizeIds

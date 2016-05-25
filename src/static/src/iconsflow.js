@@ -1,5 +1,7 @@
 jQuery(function () {
 
+    window._SvgCredits = [];
+
     var ajax = null,
         preview = jQuery('#iconsflow > div > div:nth-child(2)');
 
@@ -50,7 +52,7 @@ jQuery(function () {
         data: {
             // Each time new icon was added into the canvas
             // its credits will be merged with this array
-            credits: [],
+            credits: window._SvgCredits,
             term: tt('outlined'),
             searching: false,
             page: 1,
