@@ -113,7 +113,7 @@ function e()
       </div>
       <ul class="list-reset flex-rows flex-wrap" v-bind:class="{o100: !searching, o50: searching, 'transition-opacity-1000ms': searching, 'transition-opacity-250ms': !searching}">
         <li v-for="icon in icons" class="w50 m3">
-          <a v-on:click="insertIconIntoCanvas(icon.defs[0])" href="#" class="expand-1-1 white br5">
+          <a v-on:click="insertIconIntoCanvas(icon.defs[0], icon.credits)" href="#" class="expand-1-1 white br5">
             <img v-bind:src="icon.defs[0] | svgdef" class="abs-box-image p5" alt="" />
           </a>
         </li>

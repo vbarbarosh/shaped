@@ -5671,6 +5671,10 @@ this.getSvgString = function(param) {
   return this.svgCanvasToString(param);
 };
 
+this.getSvgCredits = function () {
+  return ['foo', 'bar', 'baz'];
+};
+
 // Function: randomizeIds
 // This function determines whether to use a nonce in the prefix, when
 // generating IDs for future documents in SVG-Edit.

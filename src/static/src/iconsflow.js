@@ -48,6 +48,9 @@ jQuery(function () {
     new Vue({
         el: '#iconsflow',
         data: {
+            // Each time new icon was added into the canvas
+            // its credits will be merged with this array
+            credits: [],
             term: tt('outlined'),
             searching: false,
             page: 1,
@@ -121,11 +124,21 @@ jQuery(function () {
             tt: window.tt,
             chunk: chunk,
             static_path: static_path,
-            insertIconIntoCanvas: function (svgdef) {
+            insertIconIntoCanvas: function (svgdef, credits) {
                 var tmp = svgCanvas.getSvgString().split(/\s*<\/g>\s*<\/svg>\s*$/);
                 if (tmp.length == 2) {
+                    this.appendCredits(credits);
                     tmp[0] += svgdef;
                     svgCanvas.setSvgString(tmp.join('</g></svg>'));
+                }
+            },
+            appendCredits: function (credits) {
+                var s, i, end;
+                for (i = 0, end = credits.length; i < end; ++i) {
+                    s = credits[i];
+                    if (this.credits.indexOf(s) === -1) {
+                        this.credits.push(s);
+                    }
                 }
             },
             refreshPageSize: function () {
