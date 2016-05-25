@@ -134,7 +134,7 @@ jQuery(function () {
             },
             appendCredits: function (credits) {
                 var s, i, end;
-                for (i = 0, end = credits.length; i < end; ++i) {
+                for (i = 0, end = (credits ? credits.length : 0); i < end; ++i) {
                     s = credits[i];
                     if (this.credits.indexOf(s) === -1) {
                         this.credits.push(s);
