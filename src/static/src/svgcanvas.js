@@ -965,7 +965,7 @@ this.prepareSvg = function(newDoc) {
   for (var i = 0, len = paths.length; i < len; ++i) {
     var path = paths[i];
     path.setAttribute('d', pathActions.convertPath(path));
-    pathActions.fixEnd(path);
+    // pathActions.fixEnd(path);
   }
 };
 
