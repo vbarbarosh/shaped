@@ -5675,6 +5675,10 @@ this.getSvgCredits = function () {
   return window._SvgCredits;
 };
 
+this.resetUndoHistory = function () {
+  svgCanvas.undoMgr.resetUndoStack();
+};
+
 // Function: randomizeIds
 // This function determines whether to use a nonce in the prefix, when
 // generating IDs for future documents in SVG-Edit.

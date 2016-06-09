@@ -75,7 +75,8 @@ function embedded_svg_edit(frame){
   //var l=[];for(var i in svgCanvas){if(typeof svgCanvas[i] == "function"){l.push(i)}};
   //run in svgedit itself
   var functions = ["updateElementFromJson", "embedImage", "fixOperaXML", "clearSelection", "addToSelection",
-    "removeFromSelection", "addNodeToSelection", "open", "save", "getSvgString", 'getSvgCredits', "setSvgString", "createLayer",
+    "removeFromSelection", "addNodeToSelection", "open", "save", "getSvgString", 'getSvgCredits', "resetUndoHistory",
+    "setSvgString", "createLayer",
     "deleteCurrentLayer", "getCurrentDrawing", "setCurrentLayer", "renameCurrentLayer", "setCurrentLayerPosition",
     "setLayerVisibility", "moveSelectedToLayer", "clear", "clearPath", "getNodePoint", "clonePathNode", "deletePathNode",
     "getResolution", "getImageTitle", "setImageTitle", "setResolution", "setBBoxZoom", "setZoom", "getMode", "setMode",
