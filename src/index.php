@@ -90,7 +90,7 @@ function e()
 
 <title>Method Draw</title>
 </head>
-<body oncontextmenu="if (event.target.nodeName != 'INPUT') event.preventDefault()">
+<body class="user-select-none" oncontextmenu="if (event.target.nodeName != 'INPUT') event.preventDefault()">
 
 <div v-show="true" style="display: none;" id="iconsflow">
 

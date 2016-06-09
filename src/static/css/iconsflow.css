@@ -8,6 +8,13 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c4c96', endColorstr='#15b5cf',GradientType=0 );
 }
 
+.user-select-none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 #svg_editor {
     background: none;
 }
