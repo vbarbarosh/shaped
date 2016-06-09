@@ -5677,6 +5677,7 @@ this.getSvgCredits = function () {
 
 this.resetUndoHistory = function () {
   svgCanvas.undoMgr.resetUndoStack();
+  svgCanvas.updateContextPanel();
 };
 
 // Function: randomizeIds

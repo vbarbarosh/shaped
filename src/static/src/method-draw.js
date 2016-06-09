@@ -1615,7 +1615,8 @@
       svgCanvas.bind("contextset", contextChanged);
       svgCanvas.bind("extension_added", extAdded);
       svgCanvas.textActions.setInputElem($("#text")[0]);
-    
+      svgCanvas.updateContextPanel = updateContextPanel;
+
       var str = '<div class="palette_item transparent" data-rgb="none"></div>\
                 <div class="palette_item black" data-rgb="#000000"></div>\
                 <div class="palette_item white" data-rgb="#ffffff"></div>'
