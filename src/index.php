@@ -241,9 +241,9 @@ function e()
         <div class="menu_item" id="tool_wireframe">{{ tt('View Wireframe') }}</div>
 <!--
         <div class="menu_item" id="tool_snap">{{ tt('Snap to Grid') }}</div>
--->
         <div class="separator"></div>
         <div class="menu_item" id="tool_source">{{ tt('Source...') }}<span class="shortcut">⌘U</span></div>
+-->
     </div>
   </div>
 
