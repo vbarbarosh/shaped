@@ -246,7 +246,7 @@ function e()
 -->
     </div>
   </div>
-  <div style="position: absolute; top: 11px; left: 460px; font: 14px/120% 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; color: #868686;">BETA</div>
+  <div style="position: absolute; top: 11px; right: 125px; font: 14px/120% 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; color: #868686;">BETA</div>
 </div>
 
 <div id="tools_top" class="tools_panel">
