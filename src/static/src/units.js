@@ -74,7 +74,7 @@ svgedit.units.init = function(elementContainer) {
   rect.setAttribute('height',"1ex");
   rect.setAttribute('x',"1in");
   svg.appendChild(rect);
-  var bb = rect.getBBox();
+  var bb = ff_bug_NS_ERROR_FAILURE_getBBox(rect);
   document.body.removeChild(svg);
 
   var inch = bb.x;

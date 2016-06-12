@@ -50,8 +50,28 @@ function e()
 <!--
   <script src="//vuejs.org/js/vue.js" type="text/javascript"></script>
 -->
+  <script>
+    function ff_bug_NS_ERROR_FAILURE(fn, defaultValue)
+    {
+      try {
+        return fn();
+      }
+      catch (exception) {
+        return defaultValue;
+      }
+    }
 
-<?php if (!$compiled_js): ?>
+    function ff_bug_NS_ERROR_FAILURE_getBBox()
+    {
+      return ff_bug_NS_ERROR_FAILURE(function () {
+        return elem.getBBox();
+      }, {x: 0, y: 0, width: 0, height: 0});
+    }
+  </script>
+
+<?php if ($compiled_js): ?>
+  <script type="text/javascript" src="<?php e($compiled_js) ?>"></script>
+<?php else: ?>
   <script type="text/javascript" src="<?php e("$static/src/tt.js") ?>"></script>
   <script type="text/javascript" src="<?php e("$static/lib/pathseg.js") ?>"></script>
   <script type="text/javascript" src="<?php e("$static/lib/touch.js") ?>"></script>
@@ -737,14 +757,6 @@ function e()
   </ul>
 
 </div> <!-- svg_editor -->
-
-<?php if ($compiled_js): ?>
-  <script>
-    jQuery(function () {
-      jQuery('<script type="text/javascript" />').attr('src', <?php echo json_encode($compiled_js) ?>)..appendTo(document.body);
-    })
-  </script>
-<?php endif ?>
 
 </body>
 </html>

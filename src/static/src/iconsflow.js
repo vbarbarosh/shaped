@@ -1,4 +1,4 @@
-(function () {
+jQuery(function () {
 
     window._SvgCredits = [];
 
@@ -207,4 +207,4 @@
         }
     });
 
-})();
+});

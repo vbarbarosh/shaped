@@ -59,7 +59,9 @@ var supportsGoodTextCharPos_ = (function() {
    var text = document.createElementNS(svgns,'text');
    text.textContent = 'a';
    svgcontent.appendChild(text);
-   var pos = text.getStartPositionOfChar(0);
+   var pos = ff_bug_NS_ERROR_FAILURE(function () {
+       return text.getStartPositionOfChar(0);
+   }, 0);
    pos = pos.x; //if you put it on one line it fails when compiled
    document.documentElement.removeChild(svgroot);
    return (pos === 0);
@@ -71,7 +73,7 @@ var supportsPathBBox_ = (function() {
   var path = document.createElementNS(svgns, 'path');
   path.setAttribute('d','M0,0 C0,0 10,10 10,0');
   svgcontent.appendChild(path);
-  var bbox = path.getBBox();
+  var bbox = ff_bug_NS_ERROR_FAILURE_getBBox(path);
   document.documentElement.removeChild(svgcontent);
   return (bbox.height > 4 && bbox.height < 5);
 })();
@@ -88,7 +90,7 @@ var supportsHVLineContainerBBox_ = (function() {
   g.appendChild(path);
   g.appendChild(path2);
   svgcontent.appendChild(g);
-  var bbox = g.getBBox();
+  var bbox = ff_bug_NS_ERROR_FAILURE_getBBox(g);
   document.documentElement.removeChild(svgcontent);
   // Webkit gives 0, FF gives 10, Opera (correctly) gives 15
   return (bbox.width == 15);
