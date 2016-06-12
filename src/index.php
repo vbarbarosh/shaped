@@ -739,7 +739,11 @@ function e()
 </div> <!-- svg_editor -->
 
 <?php if ($compiled_js): ?>
-  <script type="text/javascript" src="<?php e($compiled_js) ?>"></script>
+  <script>
+    jQuery(function () {
+      jQuery('<script type="text/javascript" />').attr('src', <?php echo json_encode($compiled_js) ?>)..appendTo(document.body);
+    })
+  </script>
 <?php endif ?>
 
 </body>
