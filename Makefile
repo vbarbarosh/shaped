@@ -111,10 +111,11 @@ $(COMPILED_CSS): build
 	rm temp.css
 
 $(COMPILED_JS): build
-	java -jar $(CLOSURE) \
-		--compilation_level SIMPLE_OPTIMIZATIONS \
-		$(CLOSURE_JS_ARGS) \
-		--js_output_file $(COMPILED_JS)
+#	java -jar $(CLOSURE) \
+#		--compilation_level SIMPLE_OPTIMIZATIONS \
+#		$(CLOSURE_JS_ARGS) \
+#		--js_output_file $(COMPILED_JS)
+	cat $(JS_INPUT_FILES) > $(COMPILED_JS)
 
 clean:
 	rm -rf config
