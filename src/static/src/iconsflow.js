@@ -1,4 +1,4 @@
-jQuery(function () {
+(function () {
 
     window._SvgCredits = [];
 
@@ -207,4 +207,4 @@ jQuery(function () {
         }
     });
 
-});
+})();
