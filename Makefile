@@ -115,7 +115,7 @@ $(COMPILED_JS): build
 #		--compilation_level SIMPLE_OPTIMIZATIONS \
 #		$(CLOSURE_JS_ARGS) \
 #		--js_output_file $(COMPILED_JS)
-	cat $(JS_INPUT_FILES) > $(COMPILED_JS)
+	for i in $(JS_INPUT_FILES); do (echo // $$i; cat $$i; echo \;) done > $(COMPILED_JS)
 
 clean:
 	rm -rf config

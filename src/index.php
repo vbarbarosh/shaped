@@ -55,7 +55,6 @@ function e()
   <script type="text/javascript" src="<?php e($compiled_js) ?>"></script>
 <?php else: ?>
   <script type="text/javascript" src="<?php e("$static/src/tt.js") ?>"></script>
-  <script type="text/javascript" src="<?php e("$static/src/iconsflow.js") ?>"></script>
   <script type="text/javascript" src="<?php e("$static/lib/pathseg.js") ?>"></script>
   <script type="text/javascript" src="<?php e("$static/lib/touch.js") ?>"></script>
   <script type="text/javascript" src="<?php e("$static/lib/js-hotkeys/jquery.hotkeys.min.js") ?>"></script>
@@ -86,6 +85,7 @@ function e()
   <script type="text/javascript" src="<?php e("$static/lib/requestanimationframe.js") ?>"></script>
   <script type="text/javascript" src="<?php e("$static/lib/taphold.js") ?>"></script>
   <script type="text/javascript" src="<?php e("$static/lib/filesaver.js") ?>"></script>
+  <script type="text/javascript" src="<?php e("$static/src/iconsflow.js") ?>"></script>
 <?php endif ?>
 
 <title>Method Draw</title>
