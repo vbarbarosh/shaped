@@ -738,7 +738,7 @@ function e()
 
 </div> <!-- svg_editor -->
 
-<?php if (!$compiled_js): ?>
+<?php if ($compiled_js): ?>
   <script type="text/javascript" src="<?php e($compiled_js) ?>"></script>
 <?php endif ?>
 
