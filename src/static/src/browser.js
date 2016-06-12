@@ -59,10 +59,17 @@ var supportsGoodTextCharPos_ = (function() {
    var text = document.createElementNS(svgns,'text');
    text.textContent = 'a';
    svgcontent.appendChild(text);
-   var pos = text.getStartPositionOfChar(0)
-   pos = pos.x; //if you put it on one line it fails when compiled
-   document.documentElement.removeChild(svgroot);
-   return (pos === 0);
+    // FF yield NS_ERROR_FAILURE:
+    try {
+        var pos = text.getStartPositionOfChar(0);
+        pos = pos.x; //if you put it on one line it fails when compiled
+        document.documentElement.removeChild(svgroot);
+        return (pos === 0);
+    }
+    catch (exception) {
+        document.documentElement.removeChild(svgroot);
+        return false;
+    }
 })();
 
 var supportsPathBBox_ = (function() {
