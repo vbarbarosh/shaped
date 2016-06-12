@@ -59,27 +59,20 @@ var supportsGoodTextCharPos_ = (function() {
    var text = document.createElementNS(svgns,'text');
    text.textContent = 'a';
    svgcontent.appendChild(text);
-    // FF yield NS_ERROR_FAILURE:
-    try {
-        var pos = text.getStartPositionOfChar(0);
-        pos = pos.x; //if you put it on one line it fails when compiled
-        document.documentElement.removeChild(svgroot);
-        return (pos === 0);
-    }
-    catch (exception) {
-        document.documentElement.removeChild(svgroot);
-        return false;
-    }
+   var pos = text.getStartPositionOfChar(0);
+   pos = pos.x; //if you put it on one line it fails when compiled
+   document.documentElement.removeChild(svgroot);
+   return (pos === 0);
 })();
 
 var supportsPathBBox_ = (function() {
   var svgcontent = document.createElementNS(svgns, 'svg');
-  document.body.appendChild(svgcontent);
+  document.documentElement.appendChild(svgcontent);
   var path = document.createElementNS(svgns, 'path');
   path.setAttribute('d','M0,0 C0,0 10,10 10,0');
   svgcontent.appendChild(path);
   var bbox = path.getBBox();
-  document.body.removeChild(svgcontent);
+  document.documentElement.removeChild(svgcontent);
   return (bbox.height > 4 && bbox.height < 5);
 })();
 

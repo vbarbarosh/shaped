@@ -51,9 +51,7 @@ function e()
   <script src="//vuejs.org/js/vue.js" type="text/javascript"></script>
 -->
 
-<?php if ($compiled_js): ?>
-  <script type="text/javascript" src="<?php e($compiled_js) ?>"></script>
-<?php else: ?>
+<?php if (!$compiled_js): ?>
   <script type="text/javascript" src="<?php e("$static/src/tt.js") ?>"></script>
   <script type="text/javascript" src="<?php e("$static/lib/pathseg.js") ?>"></script>
   <script type="text/javascript" src="<?php e("$static/lib/touch.js") ?>"></script>
@@ -739,6 +737,10 @@ function e()
   </ul>
 
 </div> <!-- svg_editor -->
+
+<?php if (!$compiled_js): ?>
+  <script type="text/javascript" src="<?php e($compiled_js) ?>"></script>
+<?php endif ?>
 
 </body>
 </html>
