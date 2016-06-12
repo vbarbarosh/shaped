@@ -10,7 +10,6 @@ YUICOMPRESSOR=bin/vendor/yuicompressor-2.4.7.jar
 
 JS_FILES=\
 	static/src/tt.js \
-	static/src/iconsflow.js \
 	static/lib/pathseg.js \
 	static/lib/touch.js \
 	static/lib/js-hotkeys/jquery.hotkeys.min.js \
@@ -39,7 +38,8 @@ JS_FILES=\
 	static/extensions/ext-shapes.js \
 	static/lib/requestanimationframe.js \
 	static/lib/taphold.js \
-	static/lib/filesaver.js
+	static/lib/filesaver.js \
+	static/src/iconsflow.js
 
 CSS_FILES=\
 	static/lib/jgraduate/css/jPicker.css \
