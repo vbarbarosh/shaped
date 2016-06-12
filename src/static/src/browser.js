@@ -74,12 +74,12 @@ var supportsGoodTextCharPos_ = (function() {
 
 var supportsPathBBox_ = (function() {
   var svgcontent = document.createElementNS(svgns, 'svg');
-  document.documentElement.appendChild(svgcontent);
+  document.body.appendChild(svgcontent);
   var path = document.createElementNS(svgns, 'path');
   path.setAttribute('d','M0,0 C0,0 10,10 10,0');
   svgcontent.appendChild(path);
   var bbox = path.getBBox();
-  document.documentElement.removeChild(svgcontent);
+  document.body.removeChild(svgcontent);
   return (bbox.height > 4 && bbox.height < 5);
 })();
 
