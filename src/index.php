@@ -452,8 +452,8 @@ function e()
           <option value="'Simonetta', serif">{{ tt('Simonetta') }}</option>
           <option value="'Times New Roman', Times, serif">{{ tt('Times') }}</option>
       </select>
-      <div class="tool_button" id="tool_bold" data-title="{{ tt('Bold Text [B]') }}">B</div>
-      <div class="tool_button" id="tool_italic" data-title="{{ tt('Italic Text [I]') }}">i</div>
+      <div class="tool_button" id="tool_bold" data-title="{{ tt('Bold Text') }}">B</div>
+      <div class="tool_button" id="tool_italic" data-title="{{ tt('Italic Text') }}">i</div>
     </div>
 
     <label id="tool_font_size" data-title="{{ tt('Change Font Size') }}">
@@ -631,17 +631,17 @@ function e()
 
 
 <div id="tools_left" class="tools_panel"><!--
---><div class="tool_button" id="tool_select" title="{{ tt('Select Tool [V]') }}"></div><!--
---><div class="tool_button" id="tool_fhpath" title="{{ tt('Pencil Tool [P]') }}"></div><!--
---><div class="tool_button" id="tool_line" title="{{ tt('Line Tool [L]') }}"></div><!--
---><div class="tool_button" id="tool_rect" title="{{ tt('Square/Rect Tool [R]') }}"></div><!--
---><div class="tool_button" id="tool_ellipse" title="{{ tt('Ellipse/Circle Tool [C]') }}"></div><!--
---><div class="tool_button" id="tool_path" title="{{ tt('Path Tool [P]') }}"></div><!--
---><div class="tool_button" id="tool_text" title="{{ tt('Text Tool [T]') }}"></div><!--
---><div class="tool_button" id="tool_zoom" title="{{ tt('Zoom Tool [Z]') }}"></div><!--
---><div class="tool_button" id="tool_font_letter" title="{{ tt('Letter [F]') }}"></div><!--
+--><div class="tool_button" id="tool_select" title="{{ tt('Select Tool') }}"></div><!--
+--><div class="tool_button" id="tool_fhpath" title="{{ tt('Pencil Tool') }}"></div><!--
+--><div class="tool_button" id="tool_line" title="{{ tt('Line Tool') }}"></div><!--
+--><div class="tool_button" id="tool_rect" title="{{ tt('Square/Rect Tool') }}"></div><!--
+--><div class="tool_button" id="tool_ellipse" title="{{ tt('Ellipse/Circle Tool') }}"></div><!--
+--><div class="tool_button" id="tool_path" title="{{ tt('Path Tool') }}"></div><!--
+--><div class="tool_button" id="tool_text" title="{{ tt('Text Tool') }}"></div><!--
+--><div class="tool_button" id="tool_zoom" title="{{ tt('Zoom Tool') }}"></div><!--
+--><div class="tool_button" id="tool_font_letter" title="{{ tt('Letter') }}"></div><!--
 --><div id="color_tools">
-        <div id="tool_switch" title="{{ tt('Switch stroke and fill colors [X]') }}"></div>
+        <div id="tool_switch" title="{{ tt('Switch stroke and fill colors') }}"></div>
         <div class="color_tool active" id="tool_fill">
           <label class="icon_label" title="{{ tt('Change fill color') }}"></label>
           <div class="color_block">
