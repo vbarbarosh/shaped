@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-1.8155263662338257 -0.3397466838359833 62.96999740600586 53.289268493652344">
+    <defs>
+        <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="57.3" y1="5.7" x2="10.3" y2="45.6">
+            <stop offset="1.176%" stop-color="#4CFD8B"/>
+            <stop offset="100%" stop-color="#1B9EFC"/>
+        </linearGradient>
+        <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="17.363" y1="12.925" x2="2.438" y2="38.775">
+            <stop offset="0%" stop-color="#5EFEC4"/>
+            <stop offset="100%" stop-color="#2BCFFD"/>
+        </linearGradient>
+        <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="34.638" y1="9.287" x2="24.962" y2="21.513">
+            <stop offset="0%" stop-color="#E6FFFF" stop-opacity=".298"/>
+            <stop offset="97.647%" stop-color="#FEFFFF" stop-opacity=".784"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity=".8"/>
+        </linearGradient>
+        <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="13.813" y1="11.087" x2="5.188" y2="30.813">
+            <stop offset="0%" stop-color="#FFFE94" stop-opacity=".098"/>
+            <stop offset="18.431%" stop-color="#FFFEA1" stop-opacity=".192"/>
+            <stop offset="54.118%" stop-color="#FFFEC6" stop-opacity=".431"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity=".8"/>
+        </linearGradient>
+        <path fill="url(#a)" d="M15.75 42.25q1.05-3.55 3.6-7.75 1.45-2.3-1.15-5-2.55-2.7-4.9-1.2-1.3.8-2.75 3.9Q9 35.6 8.7 39.15q-.75 9.9 8.75 12.8-3.6-3.1-1.7-9.7m16.35-22.7q4.5-4 4.95-4.6 1.45-1.95-1.2-4.8-2.65-2.9-5.45-1.2-2.85 1.8-7.35 6.6-4.3 4.65-5.25 6.8-.85 2 2.25 4.6 3.1 2.55 4.2 1.05 3.25-4.4 7.85-8.45m18.3 1q-.4.25-2.65 3.1-2.75 3.45-4.7 5.4-2.1 2.1-5.5 4.75-2.95 2.35-3.1 2.55-.8 1.2.45 2.9 1.3 1.8 3.25 1.2 1.15-.35 3.9-2.25 3.05-2.2 5.55-4.65 3.05-3 5.15-6.05 1.5-2.15 2-3.4.6-1.5-1.2-2.95-1.8-1.5-3.15-.6m8.55-9.25q-.7-2.3-2.85-2.9.05 1.6-.75 4.25-.7 2.4-1.5 3.6-.7 1.1.3 2.6 1 1.55 2.35.8.6-.35 1.35-1.4.8-1.2 1.15-2.55.6-2.45-.05-4.4m-4.6-4.45q3.85-.4 5.7 2.15Q57.85.8 49.6.1q-6.9-.65-10.85 2.8-2.95 2.6.05 5.4 3 2.75 7.4 1 5.55-2.15 8.15-2.45z" id="e"/>
+        <path fill="url(#b)" d="M10.6 27.6q2.8-5.1 7.3-9.9 1.9-2.6-1.2-5.65-3.1-3.1-5.85-1.25-2 1.3-4.55 4.45-3.35 4.1-5 8.5-4.7 12.8 7.05 22.6-3.1-8.95 2.25-18.75z" id="f"/>
+        <path fill="url(#c)" d="M20.2 18.85q4.35-.85 8.75-.85 2.1 0 4.6.25 2.95-2.5 3.5-3.3 1.45-1.95-1.2-4.8-2.65-2.9-5.45-1.2-2 1.25-5.1 4.3-2.9 2.85-5.1 5.6z" id="g"/>
+        <path fill="url(#d)" d="M0 29.95q5.85-6.9 16.05-10.05l1.85-2.2q1.9-2.6-1.2-5.65-3.1-3.1-5.85-1.25-2.95 1.85-6.2 6.55Q.25 23.7 0 29.95z" id="h"/>
+    </defs>
+    <use xlink:href="#e" transform="matrix(1.01756 0 0 1.01924 .05 0)"/>
+    <use xlink:href="#f" transform="matrix(1.01756 0 0 1.01924 .05 0)"/>
+    <use xlink:href="#g" transform="matrix(1.01756 0 0 1.01924 .05 0)"/>
+    <use xlink:href="#h" transform="matrix(1.01756 0 0 1.01924 .05 0)"/>
+</svg>
