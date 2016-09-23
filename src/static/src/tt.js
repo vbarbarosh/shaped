@@ -95,6 +95,7 @@
         'Radius': 'Радиус',
         'Change circle\'s radius': 'Радиус окружности Изменить',
         'Ellipse': 'Эллипс',
+        'Eye Dropper Tool': 'Пипетка',
         'Change ellipse\'s cx coordinate': 'Изменение эллипса сх координат',
         'Change ellipse\'s cy coordinate': 'Изменение координат Эллипс Cy',
         'Change ellipse\'s x radius': 'Изменить эллипсом х радиус',

@@ -70,7 +70,7 @@ methodDraw.addExtension("eyedropper", function(S) {
       buttons: [{
         id: "tool_eyedropper",
         type: "mode",
-        title: "Eye Dropper Tool",
+        title: tt('Eye Dropper Tool'),
         position: 8,
         key: "I",
         icon: static_path('extensions/eyedropper.png'),
