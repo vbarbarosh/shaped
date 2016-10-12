@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+# http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin
+set -o nounset  # Treat unset variables as an error when substituting
+set -o errexit  # Exit immediately if a command exits with a non-zero status
+set -o pipefail # Status code of a pipeline will be the status code of first failed command in it or 0
+
+script=`readlink -f $0`
+scriptdir=`dirname $script`
+scriptname=`basename $script`
+
+if test `cd $scriptdir; git status -s | wc -l` -ne 0; then
+	echo error: you should have no changes at current branch
+	exit 1
+fi
+
+d=`cd $scriptdir; git rev-parse --show-toplevel`
+
+dir=build
+source_branch=production
+target_branch=build-$source_branch
+current_branch=`cd $scriptdir; git rev-parse --abbrev-ref HEAD`
+
+if test $current_branch != $source_branch; then
+    if test $# -lt 1 || test "$1" != --force; then
+        echo error: current branch is not *$source_branch*
+        echo error: use --force to force deployment
+        exit 1
+    fi
+fi
+
+cd $d
+bin/build
+
+rm -rf __tmp_dir
+cp -r $dir __tmp_dir
+git branch -D __tmp || true
+git branch -D $target_branch || true
+git push origin :$target_branch || true
+git checkout --orphan __tmp
+git add __tmp_dir
+git commit -m 'initial commit'
+git subtree split --prefix=__tmp_dir -b $target_branch
+git checkout $current_branch
+git branch -D __tmp
+git push origin $target_branch
